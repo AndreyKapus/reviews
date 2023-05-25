@@ -4,10 +4,17 @@ const RegisterForm = () => {
             <form>
                 <label>
                     <input type="text"/>
-                    <input type="text"/>
-                    <input type="text"/>
-                    <button type="submit">Sign up</button>
+                    Name
                 </label>
+                <label>
+                    <input type="text"/>
+                    Email
+                </label>
+                <label>
+                    <input type="text"/>
+                    Password
+                </label>
+                <button type="submit">Sign up</button>
             </form>
         </div>
     )
