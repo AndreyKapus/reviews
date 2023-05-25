@@ -3,15 +3,15 @@ const RegisterForm = () => {
         <div>
             <form>
                 <label>
-                    <input type="text"/>
+                    <input type="text" name='name'/>
                     Name
                 </label>
                 <label>
-                    <input type="text"/>
+                    <input type="email" name="email"/>
                     Email
                 </label>
                 <label>
-                    <input type="text"/>
+                    <input type="password" name="password"/>
                     Password
                 </label>
                 <button type="submit">Sign up</button>

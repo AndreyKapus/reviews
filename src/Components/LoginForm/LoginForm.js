@@ -3,14 +3,14 @@ const LoginForm = () => {
         <div>
             <form>
                 <label>
-                    <input/>
+                    <input type="email" name="email"/>
                     Email
                 </label>
                 <label>
-                    <input/>
+                    <input type="password" name="password"/>
                     Password
                 </label>
-                <button>Sign in</button>
+                <button type="submit">Sign in</button>
             </form>
         </div>
     )
