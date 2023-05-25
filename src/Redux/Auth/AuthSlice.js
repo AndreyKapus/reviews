@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import * as authOperations from "./AuthOperations";
 
 const initialState = {
     user: {name: null, email: null},
@@ -10,7 +11,9 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     extraReducers: {
+        [authOperations.register.fulfilled] (state, {payload}) {
 
+        }
     }
 });
 
