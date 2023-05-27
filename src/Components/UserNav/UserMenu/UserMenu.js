@@ -6,6 +6,7 @@ const UserMenu = () => {
     return (
         <>
             <p>Hello {userName}</p>
+            <button type="button">Log out</button>
         </>
     )
 };
