@@ -1,7 +1,11 @@
+import { useSelector } from "react-redux";
+import authSelectors from "../../../Redux/Auth/Selectors";
+
 const UserMenu = () => {
+    const userName = useSelector(authSelectors.getUserName)
     return (
         <>
-            <p>User name</p>
+            <p>Hello {userName}</p>
         </>
     )
 };
