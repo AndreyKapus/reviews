@@ -51,7 +51,7 @@ export const fetchCurrentUser = createAsyncThunk('auth/refresh', async(_, thunkA
 
     token.set(persistedToken);
     try{
-        const {data} = axios.get('/api/auth/current');
+        const {data} = await axios.get('/api/auth/current');
         console.log(data)
         return data;
     } catch (error) {
