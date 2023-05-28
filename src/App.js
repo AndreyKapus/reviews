@@ -3,9 +3,18 @@ import AppBar from "./Components/UserNav/AppBar";
 import HomePage from "./Pages/Home/HomePage";
 import RegisterForm from "./Components/RegisterForm/RegisterForm";
 import LoginForm from "./Components/LoginForm/LoginForm";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { authOperations } from "./Redux/Auth";
 
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser())
+  }, [dispatch]);
+
   return (
     <div>
       <AppBar/>
