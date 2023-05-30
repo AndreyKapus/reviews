@@ -5,8 +5,8 @@ export const getAll = async () => {
     return responce;
 };
 
-export const AddReview = async review => {
-    const responce = await axios.post('/api/contacts');
+export const addReview = async review => {
+    const responce = await axios.post('/api/contacts', review);
     return responce;
 }
 

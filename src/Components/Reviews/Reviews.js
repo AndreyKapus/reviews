@@ -1,7 +1,7 @@
 import { useState } from "react"
 import * as API from "../../Services/ContactsApi"
 
-const AllReviews = (data) => {
+const AllReviews = () => {
     const [reviews, setReviews] = useState([]);
 
     const getAllReviews = async () => {
@@ -11,16 +11,16 @@ const AllReviews = (data) => {
     };
 
     useState(() => {
-       if(reviews !== []) {
-        return
-       };
+    //    if(reviews === []) {
+    //     return 
+    //    };
        getAllReviews()
     }, [reviews]);
 
     return(
         <>
             <ul>
-                {reviews.map((el) => {
+                {reviews && reviews.map((el) => {
                    return <li>
                         <div>{el}</div>
                    </li>

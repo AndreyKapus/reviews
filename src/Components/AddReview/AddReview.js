@@ -1,8 +1,9 @@
 import { useState } from "react";
+import * as API from '../../Services/ContactsApi'
 
 const AddReview = () => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [date, setDate] = useState('');
   const [company, setCompany] = useState('');
   const [link, setLink] = useState('');
 
@@ -15,7 +16,7 @@ const AddReview = () => {
         break;
 
       case 'number':
-        setNumber(value);
+        setDate(value);
         break;
 
       case 'company':
@@ -33,11 +34,11 @@ const AddReview = () => {
   const handleSubmit = (e) => {
       e.preventDefault();
     //   onSubmit({userName, userNumber, company, link});
-      AddReview({name, number, company, link})
+    API.addReview({name, date, company, link})
     //   setUserName('');
     //   setUserNumber('');
-      setCompany('');
-      setLink('');
+      // setCompany('');
+      // setLink('');
     //   closeModal();
   };
 
@@ -79,7 +80,7 @@ const AddReview = () => {
           <input
               type="tel"
               name="number"
-              value={number}
+              value={date}
               onChange={handleChange}
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
