@@ -27,10 +27,9 @@ function App() {
           <Route path="/login" element={<LoginForm/>}/>
           {/* <Route path="/contacts" element={<AllReviews/>}/> */}
 
-          <Route
-          path="/contacts"
+          <Route path="/contacts"
           element={
-            <PrivateRoute redirectTo="/login" component={<HomePage />} />
+            <PrivateRoute component={<HomePage />} />
           }
         />
           {/* <Route element={<PrivatRoute/>}>
