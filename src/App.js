@@ -1,12 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import AppBar from "./Components/UserNav/AppBar";
-import HomePage from "./Pages/Home/HomePage";
-import RegisterForm from "./Components/RegisterForm/RegisterForm";
-import LoginForm from "./Components/LoginForm/LoginForm";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { authOperations } from "./Redux/Auth";
+import PrivateRoute from "./Components/UserNav/PrivatRoute"
 
+const HomePage = lazy(() => import('./Pages/Home'));
+const RegisterForm = lazy(() => import('./Components/RegisterForm'));
+const LoginForm = lazy(() => import('./Components/LoginForm'));
+const AllReviews = lazy(() => import('./Components/Reviews'))
 
 function App() {
   const dispatch = useDispatch();
@@ -17,12 +19,29 @@ function App() {
 
   return (
     <div>
-      <AppBar/>
-      <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/register" element={<RegisterForm/>}/>
-        <Route path="login" element={<LoginForm/>}/>
-      </Routes>
+      <Suspense>
+        <AppBar/>
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/register" element={<RegisterForm/>}/>
+          <Route path="/login" element={<LoginForm/>}/>
+          {/* <Route path="/contacts" element={<AllReviews/>}/> */}
+
+          <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<HomePage />} />
+          }
+        />
+          {/* <Route element={<PrivatRoute/>}>
+            <Route path="/contacts" element={<HomePage/>}/>
+          </Route> */}
+          
+          {/* <PrivatRoute path="/contacts">
+            
+          </PrivatRoute> */}
+        </Routes>
+      </Suspense>
     </div>
   );
 }

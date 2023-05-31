@@ -1,17 +1,17 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import token from '../../Services/token'
+// import token from '../../Services/token'
 import axios from 'axios';
 
-// axios.defaults.baseURL = "https://review-api-h3du.onrender.com";
+axios.defaults.baseURL = "https://review-api-h3du.onrender.com";
 
-// const token ={ 
-//     set(token) {
-//         axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-//     },
-//     unset() {
-//         axios.defaults.headers.common.Authorization = '';
-//     }
-// }
+export const token ={ 
+    set(token) {
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    },
+    unset() {
+        axios.defaults.headers.common.Authorization = '';
+    }
+}
 
 export const register = createAsyncThunk('auth/register', async credentials => {
     try {
