@@ -4,14 +4,18 @@ import { useEffect, useState } from "react"
 import * as API from "../../Services/ContactsApi"
 import authSelectors from "../../Redux/Auth/Selectors";
 import { useSelector } from "react-redux";
+import { Loader } from "../../Loader/Loader";
 
 const ReviewsPage = () => {
     const [reviews, setReviews] = useState([]);
-    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn)
+    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+    const [isLoading, setIsLoading] = useState(false)
 
     const getAllReviews = async () => {
+            setIsLoading(true)
             const responce = await API.getAll();
             setReviews(responce.data)
+            setIsLoading(false)
     };
 
     const deleteReview = async (id) => {
@@ -23,13 +27,16 @@ const ReviewsPage = () => {
         // if(!isLoggedIn) {
         //     return
         // }
+        
        getAllReviews()
+       
     }, [isLoggedIn]);
 
     return (
         <>
             <AddReview reviews={reviews} getAllReviews={getAllReviews}/>
             {isLoggedIn && <AllReviews reviews={reviews} onDeleteReview={deleteReview}/>}
+            {isLoading === true && <Loader />}
         </>
     )
 };
