@@ -19,9 +19,9 @@ export const addReview = async review => {
     }
 }
 
-export const deleteReview = async _id => {
+export const deleteReview = async (id)=> {
     try {
-        const responce = await axios.delete('api/contacts/:id', _id);
+        const responce = await axios.delete(`api/contacts/${id}`, id);
         return responce;
     } catch(error) {
         return error.message;

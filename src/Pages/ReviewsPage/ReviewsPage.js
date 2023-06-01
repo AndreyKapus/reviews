@@ -14,9 +14,9 @@ const ReviewsPage = () => {
             setReviews(responce.data)
     };
 
-    const deleteReview = async ({_id}) => {
-        await API.deleteReview(_id)
-        setReviews(prevReview => prevReview.filter(item => item._id !== _id))
+    const deleteReview = async (id) => {
+        setReviews(prevReview => prevReview.filter(item => item._id !== id));
+        await API.deleteReview(id);
     }
 
     useEffect(() => {
