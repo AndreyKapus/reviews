@@ -20,9 +20,9 @@ const ReviewsPage = () => {
     }
 
     useEffect(() => {
-        if(!isLoggedIn) {
-            return
-        }
+        // if(!isLoggedIn) {
+        //     return
+        // }
        getAllReviews()
     }, [isLoggedIn]);
 
