@@ -1,13 +1,6 @@
-// import { useEffect, useState } from "react"
-// import * as API from "../../Services/ContactsApi"
-// import authSelectors from "../../Redux/Auth/Selectors";
-// import { useSelector } from "react-redux";
 
-
-
-const AllReviews = ({reviews}) => {
+const AllReviews = ({reviews, onDeleteReview}) => {
    
-
     return(
         <>
             <ul>
@@ -17,7 +10,7 @@ const AllReviews = ({reviews}) => {
                         <p>Company: <span>{company}</span></p>
                         <p>Link: <span>{link}</span></p>
                         <p>Date: <span>{date}</span></p>
-                        <button type="button">Delete</button>
+                        <button type="button" onClick={() => onDeleteReview(_id)}>Delete</button>
                    </li>
                 }) : <div>No contacts</div>}
             </ul>

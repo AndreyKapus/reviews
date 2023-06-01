@@ -14,6 +14,11 @@ const ReviewsPage = () => {
             setReviews(responce.data)
     };
 
+    const deleteReview = async ({_id}) => {
+        await API.deleteReview(_id)
+        setReviews(prevReview => prevReview.filter(item => item._id !== _id))
+    }
+
     useEffect(() => {
         if(!isLoggedIn) {
             return
@@ -24,7 +29,7 @@ const ReviewsPage = () => {
     return (
         <>
             <AddReview reviews={reviews} getAllReviews={getAllReviews}/>
-            {isLoggedIn && <AllReviews reviews={reviews}/>}
+            {isLoggedIn && <AllReviews reviews={reviews} onDeleteReview={deleteReview}/>}
         </>
     )
 };
