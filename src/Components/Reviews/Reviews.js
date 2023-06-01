@@ -9,12 +9,9 @@ const AllReviews = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn)
 
     const getAllReviews = async () => {
-       
             const responce = await API.getAll();
-            console.log(responce.data);
             setReviews(responce.data)
     };
-    // console.log(reviews)
 
     useEffect(() => {
        getAllReviews()

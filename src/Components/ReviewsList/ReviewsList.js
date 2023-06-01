@@ -6,7 +6,10 @@ const ReviewsList = ({reviews}) => {
                 <li>Страница контактов</li>
                 {reviews ? reviews.map((el) => {
                    return <li>
-                        <div>{el.name}</div>
+                        <p>Vacancy: <span>{el.name}</span></p>
+                        <p>Company: <span>{el.company}</span></p>
+                        <p>Link: <span>{el.link}</span></p>
+                        <p>Date: <span>{el.date}</span></p>
                    </li>
                 }) : <div>No contacts</div>}
             </ul>
