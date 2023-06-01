@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as API from '../../Services/ContactsApi'
 
-const AddReview = () => {
+const AddReview = ({reviews, getAllReviews}) => {
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
   const [company, setCompany] = useState('');
@@ -41,6 +41,11 @@ const AddReview = () => {
       setLink('');
     //   closeModal();
   };
+
+  // useEffect(() => {
+  //     // getAllReviews();
+      
+  // }, [reviews])
 
 
   return (
