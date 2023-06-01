@@ -1,8 +1,12 @@
 import axios from 'axios';
 
 export const getAll = async () => {
-        const {responce} = await axios.get('/contacts');
-        return responce;
+        try{
+            const responce = await axios.get('/api/contacts');
+            return responce;
+        } catch (error) {
+            return error.message
+        }
     }
 
 
