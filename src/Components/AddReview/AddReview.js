@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as API from '../../Services/ContactsApi'
 
 const AddReview = () => {
@@ -35,12 +35,13 @@ const AddReview = () => {
       e.preventDefault();
     //   onSubmit({userName, userNumber, company, link});
     API.addReview({name, date, company, link})
-    //   setUserName('');
-    //   setUserNumber('');
-      // setCompany('');
-      // setLink('');
+      setName('');
+      setDate('');
+      setCompany('');
+      setLink('');
     //   closeModal();
   };
+
 
   return (
     <div>

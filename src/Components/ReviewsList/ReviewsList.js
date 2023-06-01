@@ -1,5 +1,5 @@
 const ReviewsList = ({reviews}) => {
-    // console.log(reviews)
+
     return (
         <>
             <ul>

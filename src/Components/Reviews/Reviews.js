@@ -15,7 +15,7 @@ const AllReviews = () => {
 
     useEffect(() => {
        getAllReviews()
-    }, [isLoggedIn, reviews]);
+    }, [isLoggedIn]);
 
     return(
         <>
