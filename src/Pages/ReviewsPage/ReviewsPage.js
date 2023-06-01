@@ -19,17 +19,17 @@ const ReviewsPage = () => {
     };
 
     const deleteReview = async (id) => {
+        setIsLoading(true)
         setReviews(prevReview => prevReview.filter(item => item._id !== id));
         await API.deleteReview(id);
-    }
+        setIsLoading(false)
+    };
 
     useEffect(() => {
         // if(!isLoggedIn) {
         //     return
         // }
-        
-       getAllReviews()
-       
+        getAllReviews() 
     }, [isLoggedIn]);
 
     return (
