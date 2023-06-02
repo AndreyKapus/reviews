@@ -11,7 +11,7 @@ const ReviewsPage = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
     const [isLoading, setIsLoading] = useState(false);
 
-    const isRefreshing = useSelector(authSelectors.getIsFetchingCurrent)
+    // const isRefreshing = useSelector(authSelectors.getIsFetchingCurrent)
 
     const getAllReviews = async () => {
             setIsLoading(true)
@@ -28,9 +28,9 @@ const ReviewsPage = () => {
     };
 
     useEffect(() => {
-        // if(!isLoggedIn) {
-        //     return
-        // }
+        if(!isLoggedIn) {
+            return;
+        }
         getAllReviews() 
     }, [isLoggedIn]);
 

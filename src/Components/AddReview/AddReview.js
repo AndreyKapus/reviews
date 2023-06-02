@@ -1,11 +1,12 @@
 import { useState } from "react";
 import * as API from '../../Services/ContactsApi'
 
-const AddReview = ({reviews, getAllReviews}) => {
+const AddReview = () => {
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
   const [company, setCompany] = useState('');
   const [link, setLink] = useState('');
+
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -77,7 +78,7 @@ const AddReview = ({reviews, getAllReviews}) => {
 
         <label>Date
           <input
-              type="tel"
+              type="date"
               name="number"
               value={date}
               onChange={handleChange}
