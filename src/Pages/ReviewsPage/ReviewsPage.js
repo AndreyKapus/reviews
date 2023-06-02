@@ -11,6 +11,8 @@ const ReviewsPage = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
     const [isLoading, setIsLoading] = useState(false);
 
+    const isRefreshing = useSelector(authSelectors.getIsFetchingCurrent)
+
     const getAllReviews = async () => {
             setIsLoading(true)
             const responce = await API.getAll();
@@ -36,7 +38,7 @@ const ReviewsPage = () => {
         <>  
             <AddReview reviews={reviews} getAllReviews={getAllReviews}/>
             {isLoggedIn && <AllReviews reviews={reviews} onDeleteReview={deleteReview}/>}
-            {isLoading === true && <Loader />}
+            {isLoading === true &&  <Loader />}
         </>
     )
 };

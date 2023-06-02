@@ -7,6 +7,7 @@ import PrivateRoute from "./Components/UserNav/PrivatRoute"
 import ReviewsPage from "./Pages/ReviewsPage/ReviewsPage";
 import RestrictedRoute from "./Components/RestrictedRoute/RestrictedRoute";
 import authSelectors from "./Redux/Auth/Selectors";
+import { Loader } from "./Loader/Loader";
 
 const HomePage = lazy(() => import('./Pages/Home'));
 const RegisterForm = lazy(() => import('./Components/RegisterForm'));
@@ -22,7 +23,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    !isRefreshing && (
+    !isRefreshing ? (
       <div>
       <Suspense>
         <AppBar/>
@@ -44,7 +45,7 @@ function App() {
         </Routes>
       </Suspense>
     </div>
-    )
+    ) : <Loader/>
   );
 }
 
