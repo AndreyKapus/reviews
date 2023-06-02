@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import AppBar from "./Components/UserNav/AppBar";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Suspense, lazy, useEffect } from "react";
 import { authOperations } from "./Redux/Auth";
 import PrivateRoute from "./Components/UserNav/PrivatRoute"
 import ReviewsPage from "./Pages/ReviewsPage/ReviewsPage";
 import RestrictedRoute from "./Components/RestrictedRoute/RestrictedRoute";
+import authSelectors from "./Redux/Auth/Selectors";
 
 const HomePage = lazy(() => import('./Pages/Home'));
 const RegisterForm = lazy(() => import('./Components/RegisterForm'));
@@ -14,13 +15,15 @@ const LoginForm = lazy(() => import('./Components/LoginForm'));
 
 function App() {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(authSelectors.getIsFetchingCurrent)
 
   useEffect(() => {
     dispatch(authOperations.fetchCurrentUser())
   }, [dispatch]);
 
   return (
-    <div>
+    !isRefreshing && (
+      <div>
       <Suspense>
         <AppBar/>
         <Routes>
@@ -41,6 +44,7 @@ function App() {
         </Routes>
       </Suspense>
     </div>
+    )
   );
 }
 

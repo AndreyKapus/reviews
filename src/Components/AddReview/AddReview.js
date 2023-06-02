@@ -33,7 +33,6 @@ const AddReview = ({reviews, getAllReviews}) => {
 
   const handleSubmit = (e) => {
       e.preventDefault();
-    //   onSubmit({userName, userNumber, company, link});
     API.addReview({name, date, company, link})
       setName('');
       setDate('');
@@ -41,12 +40,6 @@ const AddReview = ({reviews, getAllReviews}) => {
       setLink('');
     //   closeModal();
   };
-
-  // useEffect(() => {
-  //     // getAllReviews();
-      
-  // }, [reviews])
-
 
   return (
     <div>

@@ -9,7 +9,7 @@ import { Loader } from "../../Loader/Loader";
 const ReviewsPage = () => {
     const [reviews, setReviews] = useState([]);
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
 
     const getAllReviews = async () => {
             setIsLoading(true)
@@ -33,7 +33,7 @@ const ReviewsPage = () => {
     }, [isLoggedIn]);
 
     return (
-        <>
+        <>  
             <AddReview reviews={reviews} getAllReviews={getAllReviews}/>
             {isLoggedIn && <AllReviews reviews={reviews} onDeleteReview={deleteReview}/>}
             {isLoading === true && <Loader />}
