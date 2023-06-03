@@ -1,10 +1,21 @@
+import { useState } from "react";
 
 const AllReviews = ({reviews, onDeleteReview}) => {
+    const [inputValue, setInputValue] = useState('');
+
+    const searchReview = (e) => {
+        setInputValue(e.target.value);
+    };
+
+    const filteredReviews = reviews.filter(review => {
+       return review.company.toLowerCase().includes(inputValue.toLowerCase());
+    })
    
     return(
         <>
+            <input type="text" onChange={searchReview}/>
             <ul>
-                {reviews ? reviews.map(({_id, name, company, link, date}) => {
+                {reviews ? filteredReviews.map(({_id, name, company, link, date}) => {
                    return <li key={_id}>
                         <p>Vacancy: <span>{name}</span></p>
                         <p>Company: <span>{company}</span></p>
