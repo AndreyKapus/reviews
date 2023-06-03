@@ -5,6 +5,7 @@ import * as API from "../../Services/ContactsApi"
 import authSelectors from "../../Redux/Auth/Selectors";
 import { useSelector } from "react-redux";
 import { Loader } from "../../Loader/Loader";
+import Filter from "../../Components/Filter/Filter";
 
 const ReviewsPage = () => {
     const [reviews, setReviews] = useState([]);
@@ -35,7 +36,7 @@ const ReviewsPage = () => {
     }, [isLoggedIn]);
 
     return (
-        <>  
+        <>  <Filter reviews={reviews}/>
             <AddReview reviews={reviews} getAllReviews={getAllReviews}/>
             {isLoggedIn && <AllReviews reviews={reviews} onDeleteReview={deleteReview}/>}
             {isLoading === true &&  <Loader />}
