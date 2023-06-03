@@ -4,13 +4,13 @@ import AuthNav from "./AuthNav.js/AuthNav";
 import Navigation from "./Navigation/Navigation"
 import UserMenu from "./UserMenu/UserMenu";
 import authSelectors from "../../Redux/Auth/Selectors";
-// import { Outlet } from "react-router-dom";
+import {NavWrapper} from './AppBar.styled'
 
 const AppBar = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn)
 
     return (
-        <div>
+        <NavWrapper>
             <Navigation/>
             {isLoggedIn ? <UserMenu/> : <AuthNav/>}
             
@@ -18,7 +18,7 @@ const AppBar = () => {
             {/* <Suspense fallback={<div>Loading...</div>}>
                 <Outlet/>
             </Suspense> */}
-        </div>
+        </NavWrapper>
     )
 };
 

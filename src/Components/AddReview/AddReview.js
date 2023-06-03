@@ -7,6 +7,8 @@ const AddReview = () => {
   const [company, setCompany] = useState('');
   const [link, setLink] = useState('');
 
+  // const dateRegexp = /^\d{2}.\d{2}.\d{4}$/;
+
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -82,8 +84,8 @@ const AddReview = () => {
               name="number"
               value={date}
               onChange={handleChange}
-              // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              placeholder="00.00.0000"
+              // pattern={dateRegexp}
               required
           />
         </label>
