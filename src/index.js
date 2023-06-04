@@ -5,6 +5,10 @@ import { Provider } from 'react-redux';
 import {store, persistor} from './Redux/Store/Store'
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react'
+import { Global, ThemeProvider } from '@emotion/react';
+import { GlobalStyles } from './Styles/Global.styles';
+import {theme} from './Styles/Theme';
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +16,10 @@ root.render(
     <BrowserRouter >
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <App />
+          <ThemeProvider theme={theme}>
+          <Global styles={GlobalStyles}/>
+            <App />
+          </ThemeProvider>
         </PersistGate>
       </Provider>
     </BrowserRouter>
