@@ -8,6 +8,7 @@ import ReviewsPage from "./Pages/ReviewsPage/ReviewsPage";
 import RestrictedRoute from "./Components/RestrictedRoute/RestrictedRoute";
 import authSelectors from "./Redux/Auth/Selectors";
 import { Loader } from "./Loader/Loader";
+import {Container} from './Styles/App'
 
 const HomePage = lazy(() => import('./Pages/Home'));
 const RegisterForm = lazy(() => import('./Components/RegisterForm'));
@@ -24,7 +25,7 @@ function App() {
 
   return (
     !isRefreshing ? (
-      <div>
+      <Container>
       <Suspense fallback={<div>Loading...</div>}>
         <AppBar/>
         <Routes>
@@ -44,7 +45,7 @@ function App() {
 
         </Routes>
       </Suspense>
-    </div>
+    </Container>
     ) : <Loader/>
   );
 }

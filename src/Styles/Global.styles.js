@@ -9,5 +9,6 @@ export const GlobalStyles = css`
   body {
     margin: 0px;
     font-family: ${theme.fonts.primary};
-  }
+    font-style: normal;
+  };
   `
