@@ -1,4 +1,6 @@
 import { useState } from "react";
+import AddModal from "../AddReviewModal/AddReviewModal";
+import {AddWrapper, ReviewsList, ReviewListItem, Vacancy, VacancyValue} from './Reviews.styled'
 
 const AllReviews = ({reviews, onDeleteReview}) => {
     const [inputValue, setInputValue] = useState('');
@@ -13,18 +15,21 @@ const AllReviews = ({reviews, onDeleteReview}) => {
    
     return(
         <>
-            <input type="text" onChange={searchReview}/>
-            <ul>
+            <AddWrapper>
+                <AddModal/>
+                <input type="text" onChange={searchReview}/>
+            </AddWrapper>
+            <ReviewsList>
                 {reviews ? filteredReviews.map(({_id, name, company, link, date}) => {
-                   return <li key={_id}>
-                        <p>Vacancy: <span>{name}</span></p>
-                        <p>Company: <span>{company}</span></p>
-                        <p>Link: <span>{link}</span></p>
-                        <p>Date: <span>{date}</span></p>
+                   return <ReviewListItem key={_id}>
+                        <Vacancy>Vacancy: <VacancyValue>{name}</VacancyValue></Vacancy>
+                        <Vacancy>Company: <VacancyValue>{company}</VacancyValue></Vacancy>
+                        <Vacancy>Link: <VacancyValue>{link}</VacancyValue></Vacancy>
+                        <Vacancy>Date: <VacancyValue>{date}</VacancyValue></Vacancy>
                         <button type="button" onClick={() => onDeleteReview(_id)}>Delete</button>
-                   </li>
+                   </ReviewListItem>
                 }) : <div>No contacts</div>}
-            </ul>
+            </ReviewsList>
       
         </>
 )};

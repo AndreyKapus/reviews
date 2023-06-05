@@ -1,4 +1,4 @@
-import AddReview from "../../Components/AddReview/AddReview";
+// import AddReview from "../../Components/AddReview/AddReview";
 import AllReviews from "../../Components/Reviews/Reviews";
 import { useEffect, useState } from "react"
 import * as API from "../../Services/ContactsApi"
@@ -36,7 +36,7 @@ const ReviewsPage = () => {
 
     return (
         <>  
-            <AddReview reviews={reviews} getAllReviews={getAllReviews}/>
+            {/* <AddReview reviews={reviews} getAllReviews={getAllReviews}/> */}
             {isLoggedIn && <AllReviews reviews={reviews} onDeleteReview={deleteReview}/>}
             {isLoading === true &&  <Loader />}
         </>
