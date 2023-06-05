@@ -9,5 +9,10 @@ export const theme = {
 
     fonts: {
         primary: 'source-code-pro'
+    },
+
+    colors: {
+        primaryBg: 'white'
     }
+        
 }
