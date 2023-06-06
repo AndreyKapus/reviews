@@ -14,5 +14,5 @@ export const HomePageLink = styled(NavLink)`
 
 export const ReviewsPageLink = styled(NavLink)`
     cursor: pointer;
-    color: ${p => p.theme.colors.primaryTextColor};
+    color: ${p => p.theme.colors.secondaryTextColor};
 `

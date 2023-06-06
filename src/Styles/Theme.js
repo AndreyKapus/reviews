@@ -16,6 +16,7 @@ export const theme = {
         accent: '#FFA500',
         lightGray: '#A9A9A9',
         primaryTextColor: '#353635',
+        secondaryTextColor: '#ffffff',
     },
 
 
