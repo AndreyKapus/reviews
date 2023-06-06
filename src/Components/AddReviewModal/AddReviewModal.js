@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 import {OpenModalBtn, customStyles, ModalWrapper} from './AddReviewModal.styled'
 import AddReview from '../AddReview/AddReview';
+import {FaPlus} from 'react-icons/fa'
 
   Modal.setAppElement('body');
 
@@ -18,7 +19,7 @@ import AddReview from '../AddReview/AddReview';
   
     return (
       <ModalWrapper>
-        <OpenModalBtn onClick={openModal}>Add</OpenModalBtn>
+        <OpenModalBtn onClick={openModal}><FaPlus size='20px' color='white'/></OpenModalBtn>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}

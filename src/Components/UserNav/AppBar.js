@@ -13,11 +13,6 @@ const AppBar = () => {
         <NavWrapper>
             <Navigation/>
             {isLoggedIn ? <UserMenu/> : <AuthNav/>}
-            
-            
-            {/* <Suspense fallback={<div>Loading...</div>}>
-                <Outlet/>
-            </Suspense> */}
         </NavWrapper>
     )
 };

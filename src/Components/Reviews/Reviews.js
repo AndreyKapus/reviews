@@ -1,6 +1,8 @@
 import { useState } from "react";
 import AddModal from "../AddReviewModal/AddReviewModal";
-import {AddWrapper, ReviewsList, ReviewListItem, Vacancy, VacancyValue} from './Reviews.styled'
+import {AddWrapper, ReviewsList, ReviewListItem, Vacancy, VacancyValue, DeleteBtn, SeachForm} from './Reviews.styled'
+import {VscChromeClose} from 'react-icons/vsc'
+
 
 const AllReviews = ({reviews, onDeleteReview}) => {
     const [inputValue, setInputValue] = useState('');
@@ -17,7 +19,7 @@ const AllReviews = ({reviews, onDeleteReview}) => {
         <>
             <AddWrapper>
                 <AddModal/>
-                <input type="text" onChange={searchReview}/>
+                <SeachForm type="text" onChange={searchReview} placeholder="search"/>
             </AddWrapper>
             <ReviewsList>
                 {reviews ? filteredReviews.map(({_id, name, company, link, date}) => {
@@ -26,7 +28,7 @@ const AllReviews = ({reviews, onDeleteReview}) => {
                         <Vacancy>Company: <VacancyValue>{company}</VacancyValue></Vacancy>
                         <Vacancy>Link: <VacancyValue>{link}</VacancyValue></Vacancy>
                         <Vacancy>Date: <VacancyValue>{date}</VacancyValue></Vacancy>
-                        <button type="button" onClick={() => onDeleteReview(_id)}>Delete</button>
+                        <DeleteBtn type="button" onClick={() => onDeleteReview(_id)}><VscChromeClose color="white" size='9px'/></DeleteBtn>
                    </ReviewListItem>
                 }) : <div>No contacts</div>}
             </ReviewsList>

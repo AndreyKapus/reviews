@@ -14,10 +14,11 @@ export const customStyles = {
   };
 
 export const OpenModalBtn = styled.button`
+width: 40px;
+height: 40px;
 border-radius: 50%;
 border: none;
 background-color: ${p => p.theme.colors.accent};
-color: ${p => p.theme.colors.white};
 padding: 10px;
 `;
 

@@ -12,7 +12,12 @@ export const theme = {
     },
 
     colors: {
-        primaryBg: 'white'
-    }
+        primaryBg: 'white',
+        accent: '#FFA500',
+        lightGray: '#A9A9A9',
+        primaryTextColor: '#353635',
+    },
+
+
         
 }

@@ -14,6 +14,6 @@ export const UserMenuGreetings = styled.p`
 
 export const LogoutBtn = styled.button`
     border: none;
+    color: ${p => p.theme.colors.lightGray};
     background-color: ${p => p.theme.colors.primaryBg};
-    text-decoration: underline;
 `
