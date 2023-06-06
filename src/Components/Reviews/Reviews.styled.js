@@ -17,11 +17,22 @@ export const ReviewsList = styled.ul`
     flex-direction: column;
     list-style: none;
     padding: 0px;
-    max-width: 320px;
+    
     margin-top: 24px;
     margin-right: auto;
     margin-left: auto;
     gap: 15px;
+
+    @media screen and (max-width: 767px) {
+        max-width: 320px;
+    };
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    };
 `;
 
 export const ReviewListItem = styled.li`
@@ -29,6 +40,11 @@ export const ReviewListItem = styled.li`
     border: 1px solid ${p => p.theme.colors.accent};
     border-radius: 5px;
     padding: 10px;
+
+    @media screen and (min-width: 768px) {
+        width: 300px;
+        height: 200px;
+    };
 `;
 
 export const Vacancy = styled.p`
