@@ -24,4 +24,5 @@ padding: 10px;
 
 export const ModalWrapper = styled.div`
 
-`
+`;
+

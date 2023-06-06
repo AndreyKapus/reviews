@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authOperations } from "../../Redux/Auth";
+import {RegFormWrapper, RegFormStyled, RegFormLabel, RegInput, RegBtn} from './RegisterForm.styled'
 
 const RegisterForm = () => {
     const dispatch = useDispatch()
@@ -29,23 +30,20 @@ const RegisterForm = () => {
     }
     
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <input type="text" name='name' value={name} onChange={handleChange}/>
-                    Name
-                </label>
-                <label>
-                    <input type="email" name="email" value={email} onChange={handleChange}/>
-                    Email
-                </label>
-                <label>
-                    <input type="password" name="password" value={password} onChange={handleChange}/>
-                    Password
-                </label>
-                <button type="submit">Sign up</button>
-            </form>
-        </div>
+        <RegFormWrapper>
+            <RegFormStyled onSubmit={handleSubmit}>
+                <RegFormLabel>Name
+                    <RegInput type="text" name='name' value={name} onChange={handleChange}/>
+                </RegFormLabel>
+                <RegFormLabel>Email
+                    <RegInput type="email" name="email" value={email} onChange={handleChange}/>
+                </RegFormLabel>
+                <RegFormLabel>Password
+                    <RegInput type="password" name="password" value={password} onChange={handleChange}/>         
+                </RegFormLabel>
+                <RegBtn type="submit">Sign up</RegBtn>
+            </RegFormStyled>
+        </RegFormWrapper>
     )
 };
 

@@ -28,8 +28,7 @@ import {FaPlus} from 'react-icons/fa'
         >
           <button onClick={closeModal}>close</button>
           <AddReview onSubmit={onSubmit} closeModal={closeModal}/>
-          <form>
-          </form>
+  
         </Modal>
       </ModalWrapper>
     );

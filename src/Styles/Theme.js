@@ -19,6 +19,13 @@ export const theme = {
         secondaryTextColor: '#ffffff',
     },
 
+    fontSizes: {
+        textSize: '14px',
+        secondaryTextSize: '16px',
+        subTitleSize: '18px',
+        titleSize: '28px',
+    }
+
 
         
 }

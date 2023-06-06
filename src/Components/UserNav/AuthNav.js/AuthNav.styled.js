@@ -3,4 +3,5 @@ import { NavLink } from 'react-router-dom';
 
 export const AuthNavLink = styled(NavLink)`
     margin-right: 10px;
+    color: ${p => p.theme.colors.secondaryTextColor}
 `

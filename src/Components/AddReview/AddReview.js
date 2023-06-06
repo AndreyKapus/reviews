@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as API from '../../Services/ContactsApi'
+import {AddReviewWrapper, AddForm, AddLabel, AddInput, AddBtn} from './AddReview.styled'
 
 const AddReview = () => {
   const [name, setName] = useState('');
@@ -45,10 +46,10 @@ const AddReview = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>Job vacancy
-          <input
+    <AddReviewWrapper>
+      <AddForm onSubmit={handleSubmit}>
+        <AddLabel>Job vacancy
+          <AddInput
               type="text"
               name="name"
               value={name}
@@ -56,30 +57,30 @@ const AddReview = () => {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
           />
-        </label>
+        </AddLabel>
 
-        <label>Company
-          <input
+        <AddLabel>Company
+          <AddInput
               type="text"
               name="company"
               value={company}
               onChange={handleChange}
               required
           />
-        </label>
+        </AddLabel>
 
-        <label>Link
-          <input
+        <AddLabel>Link
+          <AddInput
               type="text"
               name="link"
               value={link}
               onChange={handleChange}
               required
           />
-        </label>
+        </AddLabel>
 
-        <label>Date
-          <input
+        <AddLabel>Date
+          <AddInput
               type="text"
               name="number"
               value={date}
@@ -88,10 +89,10 @@ const AddReview = () => {
               // pattern={dateRegexp}
               required
           />
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
-    </div>
+        </AddLabel>
+        <AddBtn type="submit">Add contact</AddBtn>
+      </AddForm>
+    </AddReviewWrapper>
   )
 }
 
