@@ -25,9 +25,10 @@ function App() {
 
   return (
     !isRefreshing ? (
-      <Container>
+      
       <Suspense fallback={<div>Loading...</div>}>
         <AppBar/>
+        <Container>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/register" element={<RegisterForm/>}/>
@@ -44,8 +45,9 @@ function App() {
           />
 
         </Routes>
+        </Container>
       </Suspense>
-    </Container>
+    
     ) : <Loader/>
   );
 }
