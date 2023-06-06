@@ -26,3 +26,16 @@ export const ModalWrapper = styled.div`
 
 `;
 
+export const CloseModalBtn = styled.button`
+position: absolute;
+justify-content: center;
+align-items: center;
+width: 25px;
+height: 25px;
+border-radius: 50%;
+border: none;
+background-color: ${p => p.theme.colors.accent};
+top: 10px;
+right: 10px;
+cursor: pointer;
+`

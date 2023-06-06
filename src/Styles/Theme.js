@@ -8,7 +8,7 @@ export const theme = {
       },
 
     fonts: {
-        primary: 'source-code-pro'
+        primary: 'Bradley Hand, cursive'
     },
 
     colors: {

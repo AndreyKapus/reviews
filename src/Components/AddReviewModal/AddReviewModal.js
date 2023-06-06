@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
-import {OpenModalBtn, customStyles, ModalWrapper} from './AddReviewModal.styled'
+import {OpenModalBtn, customStyles, ModalWrapper,CloseModalBtn} from './AddReviewModal.styled'
 import AddReview from '../AddReview/AddReview';
 import {FaPlus} from 'react-icons/fa'
+import {VscChromeClose} from 'react-icons/vsc'
 
   Modal.setAppElement('body');
 
@@ -26,7 +27,7 @@ import {FaPlus} from 'react-icons/fa'
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <button onClick={closeModal}>close</button>
+          <CloseModalBtn onClick={closeModal}><VscChromeClose color="white" size='9px'/></CloseModalBtn>
           <AddReview onSubmit={onSubmit} closeModal={closeModal}/>
   
         </Modal>
