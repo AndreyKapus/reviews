@@ -1,14 +1,14 @@
 export const theme = {
     screens: {
-        mobile: 320,
+        mobile: '320px',
     
-        tablet: 768,
+        tablet: '768px',
     
-        desktop: 1280,
+        desktop: '1280px',
       },
 
     fonts: {
-        primary: 'Bradley Hand, cursive'
+        primary: 'Bradley Hand, cursive',
     },
 
     colors: {

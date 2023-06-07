@@ -27,8 +27,9 @@ function App() {
     !isRefreshing ? (
       
       <Suspense fallback={<div>Loading...</div>}>
-        <AppBar/>
         <Container>
+        <AppBar/>
+        
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/register" element={<RegisterForm/>}/>

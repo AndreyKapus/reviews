@@ -32,6 +32,7 @@ export const ReviewsList = styled.ul`
         justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
+        
     };
 `;
 
@@ -42,7 +43,7 @@ export const ReviewListItem = styled.li`
     padding: 10px;
 
     @media screen and (min-width: 768px) {
-        width: 300px;
+        width: 280px;
         height: 200px;
     };
 `;

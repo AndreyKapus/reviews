@@ -11,8 +11,5 @@ export const NavWrapper = styled.div`
     padding-left: 20px;
     padding-right: 20px;
 
-    @media screen and (min-width: 1280px) {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
+
 `
