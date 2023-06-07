@@ -4,16 +4,18 @@ import AuthNav from "./AuthNav.js/AuthNav";
 import Navigation from "./Navigation/Navigation"
 import UserMenu from "./UserMenu/UserMenu";
 import authSelectors from "../../Redux/Auth/Selectors";
-import {NavWrapper} from './AppBar.styled'
+import {NavWrapper, ContainerWrapper} from './AppBar.styled'
 
 const AppBar = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn)
 
     return (
-        <NavWrapper>
-            <Navigation/>
-            {isLoggedIn ? <UserMenu/> : <AuthNav/>}
-        </NavWrapper>
+        <ContainerWrapper>
+            <NavWrapper>
+                <Navigation/>
+                {isLoggedIn ? <UserMenu/> : <AuthNav/>}
+            </NavWrapper>
+        </ContainerWrapper>
     )
 };
 
