@@ -15,7 +15,7 @@ margin: 0 auto;
 }
 
 @media screen and (min-width: 1280px) {
-  width: 1200px;
+  width: 1280px;
 }
 }
 `

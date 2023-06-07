@@ -43,7 +43,12 @@ export const ReviewListItem = styled.li`
     padding: 10px;
 
     @media screen and (min-width: 768px) {
-        width: 280px;
+        width: 355px;
+        height: 200px;
+    };
+
+    @media screen and (min-width: 1280px) {
+        width: 395px;
         height: 200px;
     };
 `;
@@ -69,5 +74,4 @@ export const DeleteBtn = styled.button`
     background-color: ${p => p.theme.colors.accent};
     top: -10px;
     right: -10px;
-
 `

@@ -25,11 +25,11 @@ export const NavWrapper = styled.div`
     }
 
     @media screen and (min-width: 1280px) {
-    width: 1200px;
+    width: 1280px;
     }
 `;
 
 export const ContainerWrapper = styled.div`
     width: 100%;
     background-color: ${p => p.theme.colors.accent};
-`
+`;
