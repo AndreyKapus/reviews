@@ -1,4 +1,3 @@
-// import AddReview from "../../Components/AddReview/AddReview";
 import AllReviews from "../../Components/Reviews/Reviews";
 import { useEffect, useState } from "react"
 import * as API from "../../Services/ContactsApi"

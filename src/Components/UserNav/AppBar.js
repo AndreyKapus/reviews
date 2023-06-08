@@ -1,4 +1,3 @@
-// import { Suspense } from "react";
 import { useSelector } from "react-redux";
 import AuthNav from "./AuthNav.js/AuthNav";
 import Navigation from "./Navigation/Navigation"

@@ -7,8 +7,6 @@ export const AddWrapper = styled.div`
 
 export const ReviewsWrapper = styled.div`
     margin-top: 24px;
-   
-    
 `
 
 export const SeachForm = styled.input`
