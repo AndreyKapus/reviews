@@ -82,4 +82,12 @@ export const DeleteBtn = styled.button`
     background-color: ${p => p.theme.colors.accent};
     top: -10px;
     right: -10px;
+    cursor: pointer;
+    :hover {
+        transform: scale(1.2);
+        background-color: ${p => p.theme.colors.hover};
+      }
+      transition-property: transform, background-color;
+      transition-duration: 250ms;
+      transition-timing-function: linear;
 `

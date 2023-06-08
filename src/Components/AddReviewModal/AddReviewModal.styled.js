@@ -21,6 +21,14 @@ border: none;
 background-color: ${p => p.theme.colors.accent};
 padding: 10px;
 margin-right: 10px;
+cursor: pointer;
+:hover {
+  transform: scale(1.2);
+  background-color: ${p => p.theme.colors.hover};
+}
+transition-property: transform, background-color;
+transition-duration: 250ms;
+transition-timing-function: linear;
 
 @media screen and (min-width: 768px) {
   margin-right: 20px;
@@ -45,6 +53,13 @@ background-color: ${p => p.theme.colors.accent};
 top: 10px;
 right: 10px;
 cursor: pointer;
+:hover {
+  transform: scale(1.2);
+  background-color: ${p => p.theme.colors.hover};
+}
+transition-property: transform, background-color;
+transition-duration: 250ms;
+transition-timing-function: linear;
 `;
 
 export const Total = styled.p`

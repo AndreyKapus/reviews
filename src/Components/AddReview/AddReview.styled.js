@@ -37,4 +37,10 @@ export const AddBtn = styled.button`
     border-radius: 2px;
     font-size: ${p => p.theme.fontSizes.secondaryTextSize};
     cursor: pointer;
+    :hover {
+        background-color: ${p => p.theme.colors.hover};
+      }
+      transition-property: background-color;
+      transition-duration: 250ms;
+      transition-timing-function: linear;
 `;

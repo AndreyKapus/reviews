@@ -8,12 +8,12 @@ const Navigation = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
     return (
-        <div>
+        
             <UserNav >
                 <HomePageLink to='/'><img src={logo} alt="logo" style={logoStyles}/></HomePageLink>
                 {isLoggedIn && <ReviewsPageLink to='/contacts'>My reviews</ReviewsPageLink>}   
             </UserNav>
-        </div>
+    
     )
 };
 

@@ -16,6 +16,10 @@ export const HomePageLink = styled(NavLink)`
       transition-property: transform;
       transition-duration: 250ms;
       transition-timing-function: linear;
+
+    @media screen and (min-width: 768px) {
+        margin-right: 20px;
+    }
 `;
 
 export const ReviewsPageLink = styled(NavLink)`
