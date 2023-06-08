@@ -14,7 +14,6 @@ export const Loader = () => {
         wrapperClassName=""
         visible={true}
       />
-      ;
     </LoaderStyled>
   );
 };
