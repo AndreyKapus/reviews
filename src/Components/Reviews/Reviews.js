@@ -18,7 +18,7 @@ const AllReviews = ({reviews, onDeleteReview}) => {
     return(
         <>
             <AddWrapper>
-                <AddModal/>
+                <AddModal reviews={reviews}/>
                 <SeachForm type="text" onChange={searchReview} placeholder="search"/>
             </AddWrapper>
             <ReviewsList>

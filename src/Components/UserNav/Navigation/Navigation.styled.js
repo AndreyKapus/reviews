@@ -10,9 +10,11 @@ align-items: center;
 export const HomePageLink = styled(NavLink)`
     cursor: pointer;
     margin-right: 10px;
+   
 `;
 
 export const ReviewsPageLink = styled(NavLink)`
     cursor: pointer;
     color: ${p => p.theme.colors.secondaryTextColor};
-`
+`;
+

@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
 import authSelectors from "../../../Redux/Auth/Selectors";
 import {UserNav, HomePageLink, ReviewsPageLink} from './Navigation.styled'
 import logo from '../../../icons/icons8-briefcase.svg'
+import {logoStyles} from '../../../Styles/Theme'
 
 const Navigation = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
@@ -10,7 +10,7 @@ const Navigation = () => {
     return (
         <div>
             <UserNav >
-                <HomePageLink to='/'><img src={logo} alt="logo" width='30px' color="#FFA500"/></HomePageLink>
+                <HomePageLink to='/'><img src={logo} alt="logo" style={logoStyles}/></HomePageLink>
                 {isLoggedIn && <ReviewsPageLink to='/contacts'>My reviews</ReviewsPageLink>}   
             </UserNav>
         </div>

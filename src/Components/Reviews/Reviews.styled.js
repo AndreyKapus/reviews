@@ -7,9 +7,14 @@ export const AddWrapper = styled.div`
 `;
 
 export const SeachForm = styled.input`
+    width: 100px;
     border: 1px solid ${p => p.theme.colors.lightGray};
     padding-left: 10px;
     border-radius: 1px 5px;
+
+    @media screen and (min-width: 768px) {
+        width: 300px;
+    }
 `
 
 export const ReviewsList = styled.ul`

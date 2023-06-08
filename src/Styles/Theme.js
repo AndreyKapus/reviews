@@ -24,8 +24,10 @@ export const theme = {
         secondaryTextSize: '16px',
         subTitleSize: '18px',
         titleSize: '28px',
-    }
+    }   
+};
 
-
-        
+export const logoStyles = {
+    width: '30px',
+    color: "#FFA500",
 }

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
-import {OpenModalBtn, customStyles, ModalWrapper,CloseModalBtn} from './AddReviewModal.styled'
+import {OpenModalBtn, customStyles, ModalWrapper,CloseModalBtn, Total} from './AddReviewModal.styled'
 import AddReview from '../AddReview/AddReview';
 import {FaPlus} from 'react-icons/fa'
 import {VscChromeClose} from 'react-icons/vsc'
 
   Modal.setAppElement('body');
 
- const AddModal = ({onSubmit}) => {
+ const AddModal = ({onSubmit, reviews}) => {
     const [modalIsOpen, setIsOpen] = useState(false);
   
     function openModal() {
@@ -21,6 +21,7 @@ import {VscChromeClose} from 'react-icons/vsc'
     return (
       <ModalWrapper>
         <OpenModalBtn onClick={openModal}><FaPlus size='20px' color='white'/></OpenModalBtn>
+        <Total>Total reviews: {reviews.length}</Total>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
