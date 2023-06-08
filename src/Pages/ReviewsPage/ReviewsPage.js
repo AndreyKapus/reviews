@@ -38,7 +38,7 @@ const ReviewsPage = () => {
         <>  
             {/* <AddReview reviews={reviews} getAllReviews={getAllReviews}/> */}
             {isLoggedIn && <AllReviews reviews={reviews} onDeleteReview={deleteReview}/>}
-            {isLoading === true &&  <Loader />}
+            {isLoading &&  <Loader />}
         </>
     )
 };
