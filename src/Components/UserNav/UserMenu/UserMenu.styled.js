@@ -28,4 +28,10 @@ export const LogoutBtn = styled.button`
     background-color: ${p => p.theme.colors.accent};
     padding: 0px;
     cursor: pointer;
+    :hover {
+        transform: scale(1.2);
+      }
+      transition-property: transform;
+      transition-duration: 250ms;
+      transition-timing-function: linear;
 `

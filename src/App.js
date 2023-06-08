@@ -25,8 +25,8 @@ function App() {
 
   return (
     !isRefreshing ? (
-      
-      <Suspense fallback={<div>Loading...</div>}>
+      <>
+      <Suspense >
         <AppBar/>
         <Container>
         <Routes>
@@ -47,7 +47,7 @@ function App() {
         </Routes>
         </Container>
       </Suspense>
-    
+      </>
     ) : <Loader/>
   );
 }

@@ -3,8 +3,11 @@ import styled from '@emotion/styled';
 export const AddWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    margin-top: 24px;
 `;
+
+export const ReviewsWrapper = styled.div`
+    margin-top: 24px;
+`
 
 export const SeachForm = styled.input`
     width: 100px;
@@ -48,12 +51,12 @@ export const ReviewListItem = styled.li`
     padding: 10px;
 
     @media screen and (min-width: 768px) {
-        width: 355px;
+        width: 350px;
         height: 200px;
     };
 
     @media screen and (min-width: 1280px) {
-        width: 395px;
+        width: 390px;
         height: 200px;
     };
 `;

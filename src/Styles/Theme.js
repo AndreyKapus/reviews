@@ -17,6 +17,7 @@ export const theme = {
         lightGray: '#A9A9A9',
         primaryTextColor: '#353635',
         secondaryTextColor: '#ffffff',
+        hover: '#ffefd6'
     },
 
     fontSizes: {

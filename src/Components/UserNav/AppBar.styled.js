@@ -1,9 +1,13 @@
 import styled from '@emotion/styled';
 
+export const ContainerWrapper = styled.div`
+    width: 100%;
+    background-color: ${p => p.theme.colors.accent};
+`;
+
 export const NavWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    align-items: center;
     align-items: center;
     
     padding-top: 15px;
@@ -29,7 +33,3 @@ export const NavWrapper = styled.div`
     }
 `;
 
-export const ContainerWrapper = styled.div`
-    width: 100%;
-    background-color: ${p => p.theme.colors.accent};
-`;

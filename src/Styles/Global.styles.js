@@ -8,7 +8,6 @@ export const GlobalStyles = css`
 
   body {
     margin: 0px;
-    padding: 0px;
     font-family: ${theme.fonts.primary};
     color: #353635;
     font-style: normal;

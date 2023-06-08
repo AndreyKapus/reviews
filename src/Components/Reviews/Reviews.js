@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AddModal from "../AddReviewModal/AddReviewModal";
-import {AddWrapper, ReviewsList, ReviewListItem, Vacancy, VacancyValue, DeleteBtn, SeachForm} from './Reviews.styled'
+import {AddWrapper, ReviewsList, ReviewListItem, Vacancy, ReviewsWrapper, VacancyValue, DeleteBtn, SeachForm} from './Reviews.styled'
 import {VscChromeClose} from 'react-icons/vsc'
 
 
@@ -16,7 +16,7 @@ const AllReviews = ({reviews, onDeleteReview}) => {
     })
    
     return(
-        <>
+        <ReviewsWrapper>
             <AddWrapper>
                 <AddModal reviews={reviews}/>
                 <SeachForm type="text" onChange={searchReview} placeholder="search"/>
@@ -33,7 +33,7 @@ const AllReviews = ({reviews, onDeleteReview}) => {
                 }) : <div>No contacts</div>}
             </ReviewsList>
       
-        </>
+        </ReviewsWrapper>
 )};
 
 export default AllReviews

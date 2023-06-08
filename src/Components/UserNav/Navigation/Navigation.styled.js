@@ -10,10 +10,21 @@ align-items: center;
 export const HomePageLink = styled(NavLink)`
     cursor: pointer;
     margin-right: 10px;
-   
+    :hover {
+        transform: scale(1.1);
+      }
+      transition-property: transform;
+      transition-duration: 250ms;
+      transition-timing-function: linear;
 `;
 
 export const ReviewsPageLink = styled(NavLink)`
+:hover {
+    transform: scale(1.1);
+  }
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
     cursor: pointer;
     color: ${p => p.theme.colors.secondaryTextColor};
     @media screen and (min-width: 1280px) {
