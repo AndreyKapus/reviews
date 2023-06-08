@@ -28,6 +28,6 @@ export const theme = {
 };
 
 export const logoStyles = {
-    width: '30px',
+    width: '35px',
     color: "#FFA500",
 }

@@ -11,7 +11,7 @@ const UserMenu = () => {
     return (
         <UserMenuWrapper>
             {isLoggedIn && <UserMenuGreetings>Hello, {userName}!</UserMenuGreetings>}
-            <LogoutBtn type="button" onClick={() => dispatch(authOperations.logout())}><IoIosLogOut size='20px'/></LogoutBtn>
+            <LogoutBtn type="button" onClick={() => dispatch(authOperations.logout())}><IoIosLogOut size='26px'/></LogoutBtn>
         </UserMenuWrapper>
     )
 };

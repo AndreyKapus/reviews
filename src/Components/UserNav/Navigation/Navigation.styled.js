@@ -16,5 +16,8 @@ export const HomePageLink = styled(NavLink)`
 export const ReviewsPageLink = styled(NavLink)`
     cursor: pointer;
     color: ${p => p.theme.colors.secondaryTextColor};
+    @media screen and (min-width: 1280px) {
+        font-size: ${p => p.theme.fontSizes.subTitleSize};
+    };
 `;
 
