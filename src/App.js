@@ -8,7 +8,7 @@ import ReviewsPage from "./Pages/ReviewsPage/ReviewsPage";
 import RestrictedRoute from "./Components/RestrictedRoute/RestrictedRoute";
 import authSelectors from "./Redux/Auth/Selectors";
 import { Loader } from "./Loader/Loader";
-import {Container} from './Styles/App'
+import {Container} from './Styles/App.styled'
 
 const HomePage = lazy(() => import('./Pages/Home'));
 const RegisterForm = lazy(() => import('./Components/RegisterForm'));
