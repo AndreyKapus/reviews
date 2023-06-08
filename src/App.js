@@ -25,7 +25,7 @@ function App() {
 
   return (
     !isRefreshing ? (
-      <>
+     
       <Suspense >
         <AppBar/>
         <Container>
@@ -47,7 +47,7 @@ function App() {
         </Routes>
         </Container>
       </Suspense>
-      </>
+     
     ) : <Loader/>
   );
 }

@@ -7,7 +7,7 @@ export const AddWrapper = styled.div`
 
 export const ReviewsWrapper = styled.div`
     margin-top: 24px;
-
+   
     
 `
 
@@ -53,12 +53,12 @@ export const ReviewListItem = styled.li`
     padding: 10px;
 
     @media screen and (min-width: 768px) {
-        width: 350px;
+        width: 338px;
         height: 200px;
     };
 
     @media screen and (min-width: 1280px) {
-        width: 390px;
+        width: 380px;
         height: 200px;
     };
 `;
