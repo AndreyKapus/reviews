@@ -31,6 +31,7 @@ const LoginForm = () => {
     
     return (
         <LoginFormWrapper>
+             {isLoading ? <Loader/> :
             <LoginFormStyled onSubmit={handleSubmit}>
                 <LoginFormLabel>Email
                     <LoginInput type="email" name="email" value={email} onChange={handleChange}/>
@@ -40,7 +41,7 @@ const LoginForm = () => {
                 </LoginFormLabel>
                 <SignInBtn type="submit">Sign in</SignInBtn>
             </LoginFormStyled>
-            {isLoading && <Loader/>}
+}
         </LoginFormWrapper>
         
     )

@@ -1,13 +1,17 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authOperations } from "../../Redux/Auth";
 import {RegFormWrapper, RegFormStyled, RegFormLabel, RegInput, RegBtn} from './RegisterForm.styled'
+import authSelectors from "../../Redux/Auth/Selectors";
+import { Loader } from "../../Loader/Loader";
 
 const RegisterForm = () => {
     const dispatch = useDispatch()
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const isLoading = useSelector(authSelectors.getIsLoading)
 
     const handleChange = ({target: {name, value}}) => {
         switch(name) {
@@ -31,6 +35,7 @@ const RegisterForm = () => {
     
     return (
         <RegFormWrapper>
+            {isLoading ? <Loader/> :
             <RegFormStyled onSubmit={handleSubmit}>
                 <RegFormLabel>Name
                     <RegInput type="text" name='name' value={name} onChange={handleChange}/>
@@ -43,6 +48,7 @@ const RegisterForm = () => {
                 </RegFormLabel>
                 <RegBtn type="submit">Sign up</RegBtn>
             </RegFormStyled>
+}
         </RegFormWrapper>
     )
 };
