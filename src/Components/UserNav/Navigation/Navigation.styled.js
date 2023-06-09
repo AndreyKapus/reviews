@@ -25,7 +25,7 @@ export const HomePageLink = styled(NavLink)`
 export const ReviewsPageLink = styled(NavLink)`
 :hover {
     transform: scale(1.1);
-  }
+  };
   transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: linear;
