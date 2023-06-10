@@ -14,6 +14,9 @@ export const SeachForm = styled.input`
     border: 1px solid ${p => p.theme.colors.lightGray};
     padding-left: 10px;
     border-radius: 1px 5px;
+    :focus {
+        outline-color: ${p => p.theme.colors.accent};
+    }
 
     @media screen and (min-width: 768px) {
         width: 300px;

@@ -8,17 +8,19 @@ export const LoginFormWrapper = styled.div`
     margin-right: auto;
     @media screen and (min-width: 768px) {
         width: 300px;
+        margin-top: 40px;
     };
 
     @media screen and (min-width: 1280px) {
         width: 330px;
-        margin-top: 40px;
+        margin-top: 50px;
     };
 `;
 
 export const LoginFormStyled = styled.form`
     display: flex;
     flex-direction: column;
+    
 `;
 
 export const LoginFormLabel = styled.label`
@@ -32,7 +34,7 @@ export const LoginInput = styled.input`
     padding-left: 5px;
     margin-top: 2px;
     width: 250px;
-    height: 24px;
+    height: 30px;
     @media screen and (min-width: 768px) {
         width: 300px;
     };
@@ -45,7 +47,7 @@ export const LoginInput = styled.input`
 export const SignInBtn = styled.button`
     margin-top: 20px;
     width: 100%;
-    height: 35px;
+    height: 40px;
     background-color: ${p => p.theme.colors.accent};
     color: ${p => p.theme.colors.secondaryTextColor};
     border: none;

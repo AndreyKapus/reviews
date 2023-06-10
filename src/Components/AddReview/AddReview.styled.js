@@ -6,6 +6,10 @@ export const AddReviewWrapper = styled.div`
     display: flex;
     margin-left: auto;
     margin-right: auto;
+
+    @media screen and (min-width: 768px) {
+        width: 400px; 
+    };
 `;
 
 export const AddForm = styled.form`
@@ -25,12 +29,17 @@ export const AddInput = styled.input`
     margin-top: 2px;
     width: 250px;
     height: 24px;
+
+    @media screen and (min-width: 768px) {
+            width: 389px;
+            height: 30px;
+        };
 `;
 
 export const AddBtn = styled.button`
     margin-top: 20px;
     width: 100%;
-    height: 30px;
+    height: 40px;
     background-color: ${p => p.theme.colors.accent};
     color: ${p => p.theme.colors.secondaryTextColor};
     border: none;

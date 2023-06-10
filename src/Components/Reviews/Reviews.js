@@ -19,7 +19,7 @@ const AllReviews = ({reviews, onDeleteReview}) => {
         <ReviewsWrapper>
             <AddWrapper>
                 <AddModal reviews={reviews}/>
-                <SeachForm type="text" onChange={searchReview} placeholder="search"/>
+                <SeachForm type="text" onChange={searchReview} placeholder="search by company"/>
             </AddWrapper>
             <ReviewsList>
                 {reviews ? filteredReviews.map(({_id, name, company, link, date}) => {
