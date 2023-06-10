@@ -10,6 +10,7 @@ const RegisterForm = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isRegistered, setIsRegistered] = useState(false)
 
     const isLoading = useSelector(authSelectors.getIsLoading)
 
@@ -28,15 +29,16 @@ const RegisterForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(authOperations.register({name, email, password}));
+        setIsRegistered(true)
         setName('');
         setEmail('');
         setPassword('');
     }
     
     return (
+        isLoading ? <Loader/> : 
         <RegFormWrapper>
-            {isLoading ? <Loader/> :
-            <RegFormStyled onSubmit={handleSubmit}>
+            {!isRegistered ? <RegFormStyled onSubmit={handleSubmit}>
                 <RegFormLabel>Name
                     <RegInput type="text" name='name' value={name} onChange={handleChange}/>
                 </RegFormLabel>
@@ -47,9 +49,8 @@ const RegisterForm = () => {
                     <RegInput type="password" name="password" value={password} onChange={handleChange}/>         
                 </RegFormLabel>
                 <RegBtn type="submit">Sign up</RegBtn>
-            </RegFormStyled>
-}
-        </RegFormWrapper>
+            </RegFormStyled> : <div>Confirm your email</div>}
+        </RegFormWrapper> 
     )
 };
 
