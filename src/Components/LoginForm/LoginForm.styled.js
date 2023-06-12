@@ -2,13 +2,12 @@ import styled from '@emotion/styled';
 
 export const LoginFormWrapper = styled.div`
     width: 250px;
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     margin-left: auto;
     margin-right: auto;
     @media screen and (min-width: 768px) {
         width: 300px;
-        margin-top: 40px;
     };
 
     @media screen and (min-width: 1280px) {

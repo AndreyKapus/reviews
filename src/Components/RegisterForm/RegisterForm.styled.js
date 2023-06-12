@@ -12,30 +12,28 @@ export const RegisterTitle = styled.p`
 `;
 
 export const RegWrapper = styled.div`
-    margin-top: 30px;
     @media screen and (min-width: 768px) {
-        margin-top: 40px;
+       
     };
 
     @media screen and (min-width: 1280px) {
-        margin-top: 50px;
+       
     };
 `;
 
 export const RegFormWrapper = styled.div`
     width: 250px;
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     margin-left: auto;
     margin-right: auto;
         @media screen and (min-width: 768px) {
         width: 300px;
-        margin-top: 30px;
     };
 
     @media screen and (min-width: 1280px) {
         width: 330px;
-        margin-top: 30px;
+        margin-top: 50px;
     };
 `;
 
@@ -43,6 +41,7 @@ export const RegFormStyled = styled.form`
     display: flex;
     flex-direction: column;
     padding: 0px;
+    margin-top: 30px;
 `;
 
 export const RegFormLabel = styled.label`
@@ -86,3 +85,10 @@ export const RegBtn = styled.button`
       transition-duration: 250ms;
       transition-timing-function: linear;
 `;
+
+export const ConfirmEmail = styled.div`
+      text-align: center;
+      font-size: ${p => p.theme.fontSizes.desktopSubTitle};
+      margin-left: auto;
+      margin-right: auto;
+`
