@@ -2,14 +2,11 @@ import { useState } from "react";
 import * as API from '../../Services/ContactsApi'
 import {AddReviewWrapper, AddForm, AddLabel, AddInput, AddBtn} from './AddReview.styled'
 
-const AddReview = () => {
+const AddReview = ({closeModal}) => {
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
   const [company, setCompany] = useState('');
   const [link, setLink] = useState('');
-
-  // const dateRegexp = /^\d{2}.\d{2}.\d{4}$/;
-
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -42,8 +39,9 @@ const AddReview = () => {
       setDate('');
       setCompany('');
       setLink('');
-    //   closeModal();
+      closeModal();
   };
+
 
   return (
     <AddReviewWrapper>

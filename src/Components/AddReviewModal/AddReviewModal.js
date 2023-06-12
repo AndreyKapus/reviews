@@ -16,7 +16,7 @@ import {VscChromeClose} from 'react-icons/vsc'
   
     function closeModal() {
       setIsOpen(false);
-    }
+    };
   
     return (
       <ModalWrapper>
