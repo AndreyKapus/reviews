@@ -17,10 +17,21 @@ export const LoginFormWrapper = styled.div`
     };
 `;
 
+export const LoginTitle = styled.p`
+    font-size: ${p => p.theme.fontSizes.subTitleSize};
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    @media screen and (min-width: 768px) {
+        font-size: ${p => p.theme.fontSizes.desktopSubTitle};
+    }
+`;
+
 export const LoginFormStyled = styled.form`
     display: flex;
     flex-direction: column;
-    
+    margin-top: 30px;
 `;
 
 export const LoginFormLabel = styled.label`

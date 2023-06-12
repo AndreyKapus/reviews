@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { authOperations } from "../../Redux/Auth";
-import {RegFormWrapper, RegFormStyled, RegFormLabel, RegInput, RegBtn} from './RegisterForm.styled'
+import {RegisterTitle, RegWrapper, RegFormWrapper, RegFormStyled, RegFormLabel, RegInput, RegBtn} from './RegisterForm.styled'
 import authSelectors from "../../Redux/Auth/Selectors";
 import { Loader } from "../../Loader/Loader";
 
@@ -33,24 +33,27 @@ const RegisterForm = () => {
         setName('');
         setEmail('');
         setPassword('');
-    }
+    };
     
     return (
         isLoading ? <Loader/> : 
-        <RegFormWrapper>
-            {!isRegistered ? <RegFormStyled onSubmit={handleSubmit}>
-                <RegFormLabel>Name
-                    <RegInput type="text" name='name' value={name} onChange={handleChange}/>
-                </RegFormLabel>
-                <RegFormLabel>Email
-                    <RegInput type="email" name="email" value={email} onChange={handleChange}/>
-                </RegFormLabel>
-                <RegFormLabel>Password
-                    <RegInput type="password" name="password" value={password} onChange={handleChange}/>         
-                </RegFormLabel>
-                <RegBtn type="submit">Sign up</RegBtn>
-            </RegFormStyled> : <div>Confirm your email</div>}
-        </RegFormWrapper> 
+        <RegWrapper>
+            <RegisterTitle>Sign up for free</RegisterTitle>
+            <RegFormWrapper>
+                {!isRegistered ? <RegFormStyled onSubmit={handleSubmit}>
+                    <RegFormLabel>Name
+                        <RegInput type="text" name='name' value={name} onChange={handleChange}/>
+                    </RegFormLabel>
+                    <RegFormLabel>Email
+                        <RegInput type="email" name="email" value={email} onChange={handleChange}/>
+                    </RegFormLabel>
+                    <RegFormLabel>Password
+                        <RegInput type="password" name="password" value={password} onChange={handleChange}/>         
+                    </RegFormLabel>
+                    <RegBtn type="submit">Sign up</RegBtn>
+                </RegFormStyled> : <div>Confirm your email</div>}
+            </RegFormWrapper> 
+            </RegWrapper>
     )
 };
 

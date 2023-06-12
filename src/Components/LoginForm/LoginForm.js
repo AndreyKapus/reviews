@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { authOperations } from "../../Redux/Auth";
-import {LoginFormWrapper, LoginFormStyled, SignInBtn, LoginInput, LoginFormLabel} from "./LoginForm.styled"
+import {LoginFormWrapper, LoginFormStyled, SignInBtn, LoginTitle, LoginInput, LoginFormLabel} from "./LoginForm.styled"
 import authSelectors from "../../Redux/Auth/Selectors";
 import { Loader } from "../../Loader/Loader";
 
@@ -32,16 +32,19 @@ const LoginForm = () => {
     return (
         <LoginFormWrapper>
              {isLoading ? <Loader/> :
-            <LoginFormStyled onSubmit={handleSubmit}>
-                <LoginFormLabel>Email
-                    <LoginInput type="email" name="email" value={email} onChange={handleChange}/>
-                </LoginFormLabel>
-                <LoginFormLabel>Password
-                    <LoginInput type="password" name="password" value={password} onChange={handleChange}/>
-                </LoginFormLabel>
-                <SignInBtn type="submit">Sign in</SignInBtn>
-            </LoginFormStyled>
-}
+             <div>
+                <LoginTitle>Please, log in</LoginTitle>
+                <LoginFormStyled onSubmit={handleSubmit}>
+                    <LoginFormLabel>Email
+                        <LoginInput type="email" name="email" value={email} onChange={handleChange}/>
+                    </LoginFormLabel>
+                    <LoginFormLabel>Password
+                        <LoginInput type="password" name="password" value={password} onChange={handleChange}/>
+                    </LoginFormLabel>
+                        <SignInBtn type="submit">Sign in</SignInBtn>
+                </LoginFormStyled>
+                </div>
+            }           
         </LoginFormWrapper>
         
     )

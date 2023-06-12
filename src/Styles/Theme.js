@@ -24,6 +24,7 @@ export const theme = {
         textSize: '14px',
         secondaryTextSize: '16px',
         subTitleSize: '18px',
+        desktopSubTitle: '20px',
         titleSize: '28px',
     }   
 };

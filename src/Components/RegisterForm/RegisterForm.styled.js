@@ -1,5 +1,27 @@
 import styled from '@emotion/styled';
 
+export const RegisterTitle = styled.p`
+    font-size: ${p => p.theme.fontSizes.subTitleSize};
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    @media screen and (min-width: 768px) {
+        font-size: ${p => p.theme.fontSizes.desktopSubTitle};
+    };
+`;
+
+export const RegWrapper = styled.div`
+    margin-top: 30px;
+    @media screen and (min-width: 768px) {
+        margin-top: 40px;
+    };
+
+    @media screen and (min-width: 1280px) {
+        margin-top: 50px;
+    };
+`;
+
 export const RegFormWrapper = styled.div`
     width: 250px;
     margin-top: 30px;
@@ -8,12 +30,12 @@ export const RegFormWrapper = styled.div`
     margin-right: auto;
         @media screen and (min-width: 768px) {
         width: 300px;
-        margin-top: 40px;
+        margin-top: 30px;
     };
 
     @media screen and (min-width: 1280px) {
         width: 330px;
-        margin-top: 50px;
+        margin-top: 30px;
     };
 `;
 
