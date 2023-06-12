@@ -7,7 +7,7 @@ import {VscChromeClose} from 'react-icons/vsc'
 
   Modal.setAppElement('body');
 
- const AddModal = ({onSubmit, reviews}) => {
+ const AddModal = ({onSubmit, reviews, getAllReviews}) => {
     const [modalIsOpen, setIsOpen] = useState(false);
   
     function openModal() {
@@ -29,7 +29,7 @@ import {VscChromeClose} from 'react-icons/vsc'
           contentLabel="Example Modal"
         >
           <CloseModalBtn onClick={closeModal}><VscChromeClose color="white" size='9px'/></CloseModalBtn>
-          <AddReview onSubmit={onSubmit} closeModal={closeModal}/>
+          <AddReview onSubmit={onSubmit} closeModal={closeModal} reviews={reviews} getAllReviews={getAllReviews}/>
   
         </Modal>
       </ModalWrapper>

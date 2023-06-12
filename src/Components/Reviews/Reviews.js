@@ -4,7 +4,7 @@ import {AddWrapper, ReviewsList, ReviewListItem, Vacancy, ReviewsWrapper, Vacanc
 import {VscChromeClose} from 'react-icons/vsc'
 
 
-const AllReviews = ({reviews, onDeleteReview}) => {
+const AllReviews = ({reviews, onDeleteReview, getAllReviews}) => {
     const [inputValue, setInputValue] = useState('');
 
     const searchReview = (e) => {
@@ -18,7 +18,7 @@ const AllReviews = ({reviews, onDeleteReview}) => {
     return(
         <ReviewsWrapper>
             <AddWrapper>
-                <AddModal reviews={reviews}/>
+                <AddModal reviews={reviews} getAllReviews={getAllReviews}/>
                 <SeachForm type="text" onChange={searchReview} placeholder="search by company"/>
             </AddWrapper>
             <ReviewsList>
