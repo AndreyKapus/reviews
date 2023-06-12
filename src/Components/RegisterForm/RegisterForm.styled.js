@@ -12,13 +12,7 @@ export const RegisterTitle = styled.p`
 `;
 
 export const RegWrapper = styled.div`
-    @media screen and (min-width: 768px) {
-       
-    };
 
-    @media screen and (min-width: 1280px) {
-       
-    };
 `;
 
 export const RegFormWrapper = styled.div`

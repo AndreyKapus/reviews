@@ -30,7 +30,6 @@ import {VscChromeClose} from 'react-icons/vsc'
         >
           <CloseModalBtn onClick={closeModal}><VscChromeClose color="white" size='9px'/></CloseModalBtn>
           <AddReview onSubmit={onSubmit} closeModal={closeModal} reviews={reviews} getAllReviews={getAllReviews}/>
-  
         </Modal>
       </ModalWrapper>
     );
