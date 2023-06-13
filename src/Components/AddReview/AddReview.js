@@ -88,7 +88,6 @@ const AddReview = ({closeModal, getAllReviews}) => {
             value={date}
             onChange={handleChange}
             placeholder="00.00.0000"
-            // pattern={dateRegexp}
             required
         />
       </AddLabel>

@@ -81,8 +81,51 @@ export const RegBtn = styled.button`
 `;
 
 export const ConfirmEmail = styled.div`
-      text-align: center;
+      
       font-size: ${p => p.theme.fontSizes.desktopSubTitle};
-      margin-left: auto;
-      margin-right: auto;
+
+`;
+
+export const ConfirmationWrapper = styled.div`
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+
+    @media screen and (min-width: 768px) {
+        margin-top: 50px;
+    };
+`;
+
+export const ResendSubtitle = styled.p`
+    margin-top: 30px;
+    margin-bottom: 0px;
+`;
+
+export const ResendForm = styled.form`
+    margin-top: 20px;
+`;
+
+export const ResendInput = styled.input`
+    width: 150px;
+    height: 30px;
+    margin-right: 10px;
+    border: none;
+    border-bottom: 2px solid ${p => p.theme.colors.accent};
+`;
+
+export const ResendBtn = styled.button`
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    background-color: ${p => p.theme.colors.accent};
+    color: ${p => p.theme.colors.secondaryTextColor};
+    padding: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const ResendBtnText = styled.span`
+    margin-right: 5px;
 `

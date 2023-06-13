@@ -17,6 +17,10 @@ const authSlice = createSlice({
             state.isLogedIn = false;
         },
 
+        [authOperations.verify.fulfilled] (state) {
+            state.isLogedIn = false;
+        },
+
         [authOperations.login.pending] (state, {payload}) {
             state.isLoading = true;
         },

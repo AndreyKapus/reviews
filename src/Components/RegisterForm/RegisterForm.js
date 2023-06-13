@@ -1,9 +1,24 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { authOperations } from "../../Redux/Auth";
-import {RegisterTitle, RegWrapper, RegFormWrapper, RegFormStyled, RegFormLabel, RegInput, RegBtn, ConfirmEmail} from './RegisterForm.styled'
+import {RegisterTitle, 
+    RegWrapper, 
+    RegFormWrapper, 
+    RegFormStyled, 
+    RegFormLabel, 
+    ResendSubtitle, 
+    RegInput, 
+    RegBtn, 
+    ConfirmEmail, 
+    ConfirmationWrapper,
+    ResendForm,
+    ResendInput,
+    ResendBtn,
+    ResendBtnText
+} from './RegisterForm.styled'
 import authSelectors from "../../Redux/Auth/Selectors";
 import { Loader } from "../../Loader/Loader";
+import {RiMailSendLine} from 'react-icons/ri'
 
 const RegisterForm = () => {
     const dispatch = useDispatch()
@@ -24,7 +39,13 @@ const RegisterForm = () => {
                 return setPassword(value);
             default: return;
         }
-    }
+    };
+
+    const resendVerificationCode = (e) => {
+        e.preventDefault();
+        dispatch(authOperations.verify({email
+        }))
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,9 +59,8 @@ const RegisterForm = () => {
     return (
         isLoading ? <Loader/> : 
         
-            
-            <RegFormWrapper>
-                {!isRegistered ? 
+            <div>
+           {!isRegistered ? <RegFormWrapper>
                 <RegWrapper>
                     <RegisterTitle>Sign up for free</RegisterTitle>
                     <RegFormStyled onSubmit={handleSubmit}>
@@ -55,10 +75,20 @@ const RegisterForm = () => {
                         </RegFormLabel>
                         <RegBtn type="submit">Sign up</RegBtn>
                     </RegFormStyled> 
-                </RegWrapper> : <ConfirmEmail>Confirm your email</ConfirmEmail>}
+                </RegWrapper>
+            </RegFormWrapper>  : 
+                <ConfirmationWrapper>
+                    <ConfirmEmail>Confirm your email</ConfirmEmail>
+                    <ResendSubtitle>Didn't receive a confirmation email?</ResendSubtitle>
+                    <ResendForm onSubmit={resendVerificationCode}>
+                        <ResendInput placeholder="email" type="email" name="email" value={email} onChange={handleChange}/>
+                        <ResendBtn type="submit"><ResendBtnText>Resend</ResendBtnText> <RiMailSendLine/></ResendBtn>
+                    </ResendForm>
+                </ConfirmationWrapper>
+                }
                 
-            </RegFormWrapper> 
             
+            </div>
     )
 };
 

@@ -23,6 +23,16 @@ export const register = createAsyncThunk('auth/register', async credentials => {
     }
 });
 
+export const verify = createAsyncThunk('auth/verify', async credentials => {
+    try {
+        const {data} = await axios.post('/api/auth/verify', credentials);
+        token.set(data.token);
+        return data;
+    } catch (error) {
+        return error.message;
+    }
+})
+
 export const login = createAsyncThunk('auth/login', async credentials => {
     try {
         const {data} = await axios.post('/api/auth/login', credentials);
