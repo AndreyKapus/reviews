@@ -139,7 +139,14 @@ export const ResendBtn = styled.button`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
+    cursor: pointer;
+    :hover {
+        transform: scale(1.1);
+        background-color: ${p => p.theme.colors.hover};
+      }
+      transition-property: transform, background-color;
+      transition-duration: 250ms;
+      transition-timing-function: linear;
     
     @media screen and (min-width: 768px) {
         width: 100px;
@@ -147,9 +154,9 @@ export const ResendBtn = styled.button`
 
     @media screen and (min-width: 1280px) {
         width: 120px;
-    }
+    };
 `;
 
 export const ResendBtnText = styled.span`
     margin-right: 5px;
-`
+`;

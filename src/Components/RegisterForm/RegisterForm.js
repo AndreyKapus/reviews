@@ -43,8 +43,8 @@ const RegisterForm = () => {
 
     const resendVerificationCode = (e) => {
         e.preventDefault();
-        dispatch(authOperations.verify({email
-        }))
+        dispatch(authOperations.verify({email}));
+        setEmail('')
     };
 
     const handleSubmit = (e) => {
