@@ -81,8 +81,8 @@ const RegisterForm = () => {
                     <ConfirmEmail>Confirm your email</ConfirmEmail>
                     <ResendSubtitle>Didn't receive a confirmation email?</ResendSubtitle>
                     <ResendForm onSubmit={resendVerificationCode}>
-                        <ResendInput placeholder="email" type="email" name="email" value={email} onChange={handleChange}/>
-                        <ResendBtn type="submit"><ResendBtnText>Resend</ResendBtnText> <RiMailSendLine/></ResendBtn>
+                        <ResendInput placeholder="Your email..." type="email" name="email" value={email} onChange={handleChange}/>
+                        <ResendBtn type="submit"><ResendBtnText>Resend</ResendBtnText><RiMailSendLine/></ResendBtn>
                     </ResendForm>
                 </ConfirmationWrapper>
                 }
