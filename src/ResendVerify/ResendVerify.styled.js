@@ -18,7 +18,8 @@ export const ResendSubtitle = styled.p`
 
 export const ResendForm = styled.form`
     margin-top: 20px;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     @media screen and (min-width: 768px) {
@@ -29,7 +30,6 @@ export const ResendForm = styled.form`
 export const ResendInput = styled.input`
     width: 150px;
     height: 30px;
-    margin-right: 10px;
     padding-left: 10px;
     border: none;
     border-bottom: 2px solid ${p => p.theme.colors.accent};
@@ -55,6 +55,7 @@ export const ResendBtn = styled.button`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin-top: 20px;
     :hover {
         transform: scale(1.1);
         background-color: ${p => p.theme.colors.hover};
