@@ -6,26 +6,20 @@ import {RegisterTitle,
     RegFormWrapper, 
     RegFormStyled, 
     RegFormLabel, 
-    ResendSubtitle, 
     RegInput, 
     RegBtn, 
-    ConfirmEmail, 
-    ConfirmationWrapper,
-    ResendForm,
-    ResendInput,
-    ResendBtn,
-    ResendBtnText
 } from './RegisterForm.styled'
+import ResendVerify from "../../ResendVerify/ResendVerify";
 import authSelectors from "../../Redux/Auth/Selectors";
 import { Loader } from "../../Loader/Loader";
-import {RiMailSendLine} from 'react-icons/ri'
+
 
 const RegisterForm = () => {
     const dispatch = useDispatch()
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [isRegistered, setIsRegistered] = useState(false)
+    const [isRegistered, setIsRegistered] = useState(false);
 
     const isLoading = useSelector(authSelectors.getIsLoading)
 
@@ -41,12 +35,6 @@ const RegisterForm = () => {
         }
     };
 
-    const resendVerificationCode = (e) => {
-        e.preventDefault();
-        dispatch(authOperations.verify({email}));
-        setEmail('')
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(authOperations.register({name, email, password}));
@@ -58,7 +46,6 @@ const RegisterForm = () => {
     
     return (
         isLoading ? <Loader/> : 
-        
             <div>
            {!isRegistered ? <RegFormWrapper>
                 <RegWrapper>
@@ -77,17 +64,8 @@ const RegisterForm = () => {
                     </RegFormStyled> 
                 </RegWrapper>
             </RegFormWrapper>  : 
-                <ConfirmationWrapper>
-                    <ConfirmEmail>Confirm your email</ConfirmEmail>
-                    <ResendSubtitle>Didn't receive a confirmation email?</ResendSubtitle>
-                    <ResendForm onSubmit={resendVerificationCode}>
-                        <ResendInput placeholder="Your email..." type="email" name="email" value={email} onChange={handleChange}/>
-                        <ResendBtn type="submit"><ResendBtnText>Resend</ResendBtnText><RiMailSendLine/></ResendBtn>
-                    </ResendForm>
-                </ConfirmationWrapper>
+                    <ResendVerify/>
                 }
-                
-            
             </div>
     )
 };
