@@ -16,10 +16,13 @@ const ResendVerify = () => {
     const dispatch = useDispatch()
 
     const handleChange = (e) => {
-        setEmail(e.target.value)
+        const inputValue = e.target.value;
+        setEmail(inputValue);
+
+        return email.length > 5 ? setDisabled(false) : setDisabled(true)
     };
 
-    
+
 
     const resendVerificationCode = (e) => {
         e.preventDefault();
@@ -34,7 +37,7 @@ const ResendVerify = () => {
         <ResendSubtitle>Didn't receive a confirmation email?</ResendSubtitle>
         <ResendForm onSubmit={resendVerificationCode}>
             <ResendInput placeholder="Your email..." type="email" name="email" value={email} onChange={handleChange}/>
-            <ResendBtn type="submit"><ResendBtnText>Resend</ResendBtnText><RiMailSendLine/></ResendBtn>
+            {!disabled && <ResendBtn type="submit"><ResendBtnText>Resend</ResendBtnText><RiMailSendLine/></ResendBtn>}
         </ResendForm>
     </ConfirmationWrapper>
     )
