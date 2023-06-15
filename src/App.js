@@ -13,7 +13,6 @@ import {Container} from './Styles/App.styled'
 const HomePage = lazy(() => import('./Pages/Home'));
 const RegisterForm = lazy(() => import('./Components/RegisterForm'));
 const LoginForm = lazy(() => import('./Components/LoginForm'));
-// const AllReviews = lazy(() => import('./Components/Reviews'))
 
 function App() {
   const dispatch = useDispatch();

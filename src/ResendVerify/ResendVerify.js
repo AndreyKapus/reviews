@@ -22,8 +22,6 @@ const ResendVerify = () => {
         return email.length > 5 ? setDisabled(false) : setDisabled(true)
     };
 
-
-
     const resendVerificationCode = (e) => {
         e.preventDefault();
         dispatch(authOperations.verify({email}));
@@ -31,11 +29,10 @@ const ResendVerify = () => {
     };
 
     return (
-        
         <ConfirmationWrapper>
         <ConfirmEmail>Confirm your email</ConfirmEmail>
         <ResendSubtitle>Didn't receive a confirmation email?</ResendSubtitle>
-        <ResendForm onSubmit={resendVerificationCode}>
+        <ResendForm onSubmit={resendVerificationCode} autoComplete="off">
             <ResendInput placeholder="Your email..." type="email" name="email" value={email} onChange={handleChange}/>
             {!disabled && <ResendBtn type="submit"><ResendBtnText>Resend</ResendBtnText><RiMailSendLine/></ResendBtn>}
         </ResendForm>

@@ -4,7 +4,7 @@ import {AddWrapper, ReviewsList, ReviewListItem, Vacancy, ReviewsWrapper, Vacanc
 import {VscChromeClose} from 'react-icons/vsc'
 
 
-const AllReviews = ({reviews, onDeleteReview, getAllReviews}) => {
+const AllReviews = ({reviews, onDeleteReview, loadMore, getAllReviews}) => {
     const [inputValue, setInputValue] = useState('');
 
     const searchReview = (e) => {
@@ -32,7 +32,7 @@ const AllReviews = ({reviews, onDeleteReview, getAllReviews}) => {
                    </ReviewListItem>
                 }) : <div>No contacts</div>}
             </ReviewsList>
-      
+                
         </ReviewsWrapper>
 )};
 

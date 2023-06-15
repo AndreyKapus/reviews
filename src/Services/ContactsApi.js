@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const getAll = async () => {
+export const getAll = async (page) => {
         try{
-            const responce = await axios.get('/api/contacts');
+            const responce = await axios.get(`/api/contacts?page=${page}&limit=9`);
             return responce;
         } catch (error) {
             return error.message

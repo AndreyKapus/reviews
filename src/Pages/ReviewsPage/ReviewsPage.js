@@ -4,19 +4,23 @@ import * as API from "../../Services/ContactsApi"
 import authSelectors from "../../Redux/Auth/Selectors";
 import { useSelector } from "react-redux";
 import { Loader } from "../../Loader/Loader";
+import LoadMore from "../../LoadMore/LoadMore";
 
 const ReviewsPage = () => {
     const [reviews, setReviews] = useState([]);
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
     const [isLoading, setIsLoading] = useState(false);
-
-    // const isRefreshing = useSelector(authSelectors.getIsFetchingCurrent)
+    const [page, setPage] = useState(1);
 
     const getAllReviews = async () => {
             setIsLoading(true)
-            const responce = await API.getAll();
+            const responce = await API.getAll(page);
             setReviews(responce.data)
             setIsLoading(false)
+    };
+
+    const loadMore = () => {
+        setPage(prevPage => prevPage + 1)
     };
 
     const deleteReview = async (id) => {
@@ -29,14 +33,15 @@ const ReviewsPage = () => {
     useEffect(() => {
         if(!isLoggedIn) {
             return;
-        }
-        getAllReviews() 
-    }, [isLoggedIn]);
+        };
+        getAllReviews(page) 
+    }, [isLoggedIn, page]);
 
     return (
         <>  
             {/* <AddReview reviews={reviews} getAllReviews={getAllReviews}/> */}
-            {isLoggedIn && <AllReviews reviews={reviews} getAllReviews={getAllReviews} onDeleteReview={deleteReview}/>}
+            {isLoggedIn && <AllReviews reviews={reviews} loadMore={loadMore} getAllReviews={getAllReviews} onDeleteReview={deleteReview}/>}
+            <LoadMore onLoadMore={loadMore}/>
             {isLoading &&  <Loader />}
         </>
     )
