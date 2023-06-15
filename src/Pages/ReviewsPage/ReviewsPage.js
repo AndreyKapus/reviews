@@ -34,7 +34,13 @@ const ReviewsPage = () => {
         if(!isLoggedIn) {
             return;
         };
-        getAllReviews(page) 
+        const getPage = async () => {
+            setIsLoading(true)
+            const responce = await API.getAll(page);
+            setReviews(responce.data)
+            setIsLoading(false)
+    };
+    getPage(page)
     }, [isLoggedIn, page]);
 
     return (
