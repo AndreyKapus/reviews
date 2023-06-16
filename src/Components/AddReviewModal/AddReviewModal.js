@@ -21,7 +21,7 @@ import {VscChromeClose} from 'react-icons/vsc'
     return (
       <ModalWrapper>
         <OpenModalBtn onClick={openModal}><FaPlus size='20px' color='white'/></OpenModalBtn>
-        <Total>Total reviews: {reviews.length}</Total>
+        <Total>Total reviews: soon</Total>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}

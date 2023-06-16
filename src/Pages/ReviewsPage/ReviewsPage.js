@@ -12,15 +12,20 @@ const ReviewsPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [page, setPage] = useState(1);
 
-    const getAllReviews = async () => {
-            setIsLoading(true)
-            const responce = await API.getAll(page);
-            setReviews(responce.data)
-            setIsLoading(false)
+    // const getAllReviews = async () => {
+    //         setIsLoading(true)
+    //         const responce = await API.getAll();
+    //         setReviews(responce.data)
+    //         setIsLoading(false)
+    // };
+    
+
+    const nextPage = () => {
+        setPage(prevPage => prevPage + 1)
     };
 
-    const loadMore = () => {
-        setPage(prevPage => prevPage + 1)
+    const prevPage = () => {
+        setPage(prevPage => prevPage - 1)
     };
 
     const deleteReview = async (id) => {
@@ -40,14 +45,15 @@ const ReviewsPage = () => {
             setReviews(responce.data)
             setIsLoading(false)
     };
-    getPage(page)
+        getPage(page)
+       
     }, [isLoggedIn, page]);
 
     return (
         <>  
             {/* <AddReview reviews={reviews} getAllReviews={getAllReviews}/> */}
-            {isLoggedIn && <AllReviews reviews={reviews} loadMore={loadMore} getAllReviews={getAllReviews} onDeleteReview={deleteReview}/>}
-            <LoadMore onLoadMore={loadMore}/>
+            {isLoggedIn && <AllReviews reviews={reviews}  onDeleteReview={deleteReview}/>}
+            <LoadMore nextPage={nextPage} prevPage={prevPage}/>
             {isLoading &&  <Loader />}
         </>
     )

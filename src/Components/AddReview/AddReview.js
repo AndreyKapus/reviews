@@ -37,7 +37,7 @@ const AddReview = ({closeModal, getAllReviews}) => {
       e.preventDefault();
       setIsLoading(true)
     await API.addReview({name, date, company, link});
-    getAllReviews()
+    // getAllReviews()
     setIsLoading(false)
       setName('');
       setDate('');

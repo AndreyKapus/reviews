@@ -1,7 +1,8 @@
-const LoadMore = ({onLoadMore}) => {
+const LoadMore = ({nextPage, prevPage}) => {
     return (
     <>
-        <button type="button" onClick={onLoadMore}>Load more</button>
+        <button type="button" onClick={nextPage}>Next page</button>
+        <button type="button" onClick={prevPage}>Prev page</button>
     </>
     )
 };

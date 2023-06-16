@@ -11,14 +11,14 @@ const AllReviews = ({reviews, onDeleteReview, loadMore, getAllReviews}) => {
         setInputValue(e.target.value);
     };
 
-    const filteredReviews = reviews.filter(review => {
+    const filteredReviews = reviews && reviews.filter(review => {
        return review.company.toLowerCase().includes(inputValue.toLowerCase());
     })
    
     return(
         <ReviewsWrapper>
             <AddWrapper>
-                <AddModal reviews={reviews} getAllReviews={getAllReviews}/>
+                <AddModal reviews={reviews} />
                 <SeachForm type="text" onChange={searchReview} placeholder="search by company"/>
             </AddWrapper>
             <ReviewsList>
