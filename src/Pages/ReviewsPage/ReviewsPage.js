@@ -8,9 +8,10 @@ import LoadMore from "../../LoadMore/LoadMore";
 
 const ReviewsPage = () => {
     const [reviews, setReviews] = useState([]);
-    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
     const [isLoading, setIsLoading] = useState(false);
     const [page, setPage] = useState(1);
+
+    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
     // const getAllReviews = async () => {
     //         setIsLoading(true)
@@ -45,13 +46,12 @@ const ReviewsPage = () => {
             setReviews(responce.data)
             setIsLoading(false)
     };
-        getPage(page)
+            getPage(page)
        
     }, [isLoggedIn, page]);
 
     return (
         <>  
-            {/* <AddReview reviews={reviews} getAllReviews={getAllReviews}/> */}
             {isLoggedIn && <AllReviews reviews={reviews}  onDeleteReview={deleteReview}/>}
             <LoadMore nextPage={nextPage} prevPage={prevPage} reviews={reviews} page={page}/>
             {isLoading &&  <Loader />}

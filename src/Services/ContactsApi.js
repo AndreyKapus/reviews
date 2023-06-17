@@ -9,6 +9,15 @@ export const getAll = async (page) => {
         }
     }
 
+    export const getAllLenght = async () => {
+        try{
+            const responce = await axios.get(`/api/contacts`);
+            return responce;
+        } catch (error) {
+            return error.message
+        }
+    }
+
 export const addReview = async review => {
     try {
         const responce = await axios.post('/api/contacts', review);
