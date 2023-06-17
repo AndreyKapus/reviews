@@ -53,7 +53,7 @@ const ReviewsPage = () => {
         <>  
             {/* <AddReview reviews={reviews} getAllReviews={getAllReviews}/> */}
             {isLoggedIn && <AllReviews reviews={reviews}  onDeleteReview={deleteReview}/>}
-            <LoadMore nextPage={nextPage} prevPage={prevPage}/>
+            <LoadMore nextPage={nextPage} prevPage={prevPage} reviews={reviews} page={page}/>
             {isLoading &&  <Loader />}
         </>
     )
