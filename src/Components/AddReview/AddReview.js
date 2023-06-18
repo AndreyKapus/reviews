@@ -7,7 +7,7 @@ const AddReview = ({closeModal, getAllReviews}) => {
   const [date, setDate] = useState('');
   const [company, setCompany] = useState('');
   const [link, setLink] = useState('');
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -38,14 +38,14 @@ const AddReview = ({closeModal, getAllReviews}) => {
       setIsLoading(true)
     await API.addReview({name, date, company, link});
     // getAllReviews()
-    setIsLoading(false)
+    setIsLoading(false);
+    
       setName('');
       setDate('');
       setCompany('');
       setLink('');
       closeModal();
   };
-
 
   return (
     !isLoading && <AddReviewWrapper>
