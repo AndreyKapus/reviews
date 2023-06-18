@@ -1,24 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddModal from "../AddReviewModal/AddReviewModal";
 import {AddWrapper, ReviewsList, ReviewListItem, Vacancy, ReviewsWrapper, VacancyValue, DeleteBtn, SeachForm} from './Reviews.styled'
 import {VscChromeClose} from 'react-icons/vsc'
+import * as API from "../../Services/ContactsApi"
+import authSelectors from "../../Redux/Auth/Selectors";
+import { useSelector } from "react-redux";
 
 
-const AllReviews = ({reviews, onDeleteReview, loadMore, getAllReviews}) => {
+const AllReviews = ({reviews, onDeleteReview}) => {
     const [inputValue, setInputValue] = useState('');
+    const [total, setTotal] = useState('');
+
+    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn)
 
     const searchReview = (e) => {
         setInputValue(e.target.value);
     };
 
-    const filteredReviews = reviews && reviews.filter(review => {
-       return review.company.toLowerCase().includes(inputValue.toLowerCase());
-    })
+    useEffect(() => {
+        if(!isLoggedIn) {
+          return;
+        };
+        
+          const getAllReviewsLenght = async () => {
+            const responce = await API.getAllLenght();
+          setTotal(responce.data)
+          }
+            getAllReviewsLenght()
+      }, [isLoggedIn])
+
+    const filteredReviews = inputValue !== '' && total !== [] ? total.filter(review => 
+        review.company.toLowerCase().includes(inputValue.toLowerCase())
+     ) : reviews;
    
     return(
         <ReviewsWrapper>
             <AddWrapper>
-                <AddModal reviews={reviews} />
+                <AddModal reviews={reviews} total={total}/>
                 <SeachForm type="text" onChange={searchReview} placeholder="search by company"/>
             </AddWrapper>
             <ReviewsList>
