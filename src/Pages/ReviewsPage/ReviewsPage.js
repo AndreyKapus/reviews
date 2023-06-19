@@ -5,12 +5,25 @@ import authSelectors from "../../Redux/Auth/Selectors";
 import { useSelector } from "react-redux";
 import { Loader } from "../../Loader/Loader";
 import LoadMore from "../../LoadMore/LoadMore";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ReviewsPage = () => {
     const [reviews, setReviews] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [page, setPage] = useState(1);
+
+    const showDeleteSuccess = () => {
+        toast.success('Review deleted', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+      };
 
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
@@ -35,6 +48,7 @@ const ReviewsPage = () => {
         setReviews(prevReview => prevReview.filter(item => item._id !== id));
         await API.deleteReview(id);
         setIsLoading(false)
+        showDeleteSuccess()
     };
 
     useEffect(() => {

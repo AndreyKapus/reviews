@@ -11,7 +11,7 @@ const AddReview = ({closeModal, getAllReviews, page}) => {
   const [link, setLink] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const showErrorRegister = () => {
+  const showAddSuccess = () => {
     toast.success('Review added', {
       position: "top-right",
       autoClose: 2000,
@@ -60,7 +60,7 @@ const AddReview = ({closeModal, getAllReviews, page}) => {
       setCompany('');
       setLink('');
       closeModal();
-      showErrorRegister()
+    showAddSuccess()
   };
 
   return (
@@ -107,7 +107,7 @@ const AddReview = ({closeModal, getAllReviews, page}) => {
             required
         />
       </AddLabel>
-      <AddBtn type="submit" onSubmit={() => showErrorRegister()}>Add contact</AddBtn>
+      <AddBtn type="submit" >Add contact</AddBtn>
     </AddForm>
     
   </AddReviewWrapper>
