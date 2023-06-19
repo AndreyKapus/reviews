@@ -1,6 +1,8 @@
 import { useState } from "react";
 import * as API from '../../Services/ContactsApi'
 import {AddReviewWrapper, AddForm, AddLabel, AddInput, AddBtn} from './AddReview.styled'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddReview = ({closeModal, getAllReviews, page}) => {
   const [name, setName] = useState('');
@@ -8,6 +10,19 @@ const AddReview = ({closeModal, getAllReviews, page}) => {
   const [company, setCompany] = useState('');
   const [link, setLink] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  const showErrorRegister = () => {
+    toast.success('Review added', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  };
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -45,6 +60,7 @@ const AddReview = ({closeModal, getAllReviews, page}) => {
       setCompany('');
       setLink('');
       closeModal();
+      showErrorRegister()
   };
 
   return (
@@ -91,8 +107,9 @@ const AddReview = ({closeModal, getAllReviews, page}) => {
             required
         />
       </AddLabel>
-      <AddBtn type="submit">Add contact</AddBtn>
+      <AddBtn type="submit" onSubmit={() => showErrorRegister()}>Add contact</AddBtn>
     </AddForm>
+    
   </AddReviewWrapper>
   )
 }

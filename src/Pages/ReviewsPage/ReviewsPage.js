@@ -5,6 +5,7 @@ import authSelectors from "../../Redux/Auth/Selectors";
 import { useSelector } from "react-redux";
 import { Loader } from "../../Loader/Loader";
 import LoadMore from "../../LoadMore/LoadMore";
+import { ToastContainer } from 'react-toastify';
 
 const ReviewsPage = () => {
     const [reviews, setReviews] = useState([]);
@@ -40,13 +41,6 @@ const ReviewsPage = () => {
         if(!isLoggedIn) {
             return;
         };
-    //     const getPage = async () => {
-    //         setIsLoading(true)
-    //         const responce = await API.getAll(page);
-    //         setReviews(responce.data)
-    //         setIsLoading(false)
-    // };
-    //         getPage(page)
     getAllReviews(page)
        
     }, [isLoggedIn, page]);
@@ -56,6 +50,7 @@ const ReviewsPage = () => {
             {isLoggedIn && <AllReviews reviews={reviews} page={page} onDeleteReview={deleteReview} getAllReviews={getAllReviews}/>}
             <LoadMore nextPage={nextPage} prevPage={prevPage} reviews={reviews} page={page}/>
             {isLoading &&  <Loader />}
+            <ToastContainer />
         </>
     )
 };
