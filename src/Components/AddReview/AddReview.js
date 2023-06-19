@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as API from '../../Services/ContactsApi'
 import {AddReviewWrapper, AddForm, AddLabel, AddInput, AddBtn} from './AddReview.styled'
 
-const AddReview = ({closeModal, getAllReviews}) => {
+const AddReview = ({closeModal, getAllReviews, page}) => {
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
   const [company, setCompany] = useState('');
@@ -37,7 +37,7 @@ const AddReview = ({closeModal, getAllReviews}) => {
       e.preventDefault();
       setIsLoading(true)
     await API.addReview({name, date, company, link});
-    // getAllReviews()
+    getAllReviews(page)
     setIsLoading(false);
     
       setName('');

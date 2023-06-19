@@ -13,12 +13,12 @@ const ReviewsPage = () => {
 
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
-    // const getAllReviews = async () => {
-    //         setIsLoading(true)
-    //         const responce = await API.getAll();
-    //         setReviews(responce.data)
-    //         setIsLoading(false)
-    // };
+    const getAllReviews = async (page) => {
+            setIsLoading(true)
+            const responce = await API.getAll(page);
+            setReviews(responce.data);
+            setIsLoading(false)
+    };
     
 
     const nextPage = () => {
@@ -40,19 +40,20 @@ const ReviewsPage = () => {
         if(!isLoggedIn) {
             return;
         };
-        const getPage = async () => {
-            setIsLoading(true)
-            const responce = await API.getAll(page);
-            setReviews(responce.data)
-            setIsLoading(false)
-    };
-            getPage(page)
+    //     const getPage = async () => {
+    //         setIsLoading(true)
+    //         const responce = await API.getAll(page);
+    //         setReviews(responce.data)
+    //         setIsLoading(false)
+    // };
+    //         getPage(page)
+    getAllReviews(page)
        
     }, [isLoggedIn, page]);
 
     return (
         <>  
-            {isLoggedIn && <AllReviews reviews={reviews}  onDeleteReview={deleteReview}/>}
+            {isLoggedIn && <AllReviews reviews={reviews} page={page} onDeleteReview={deleteReview} getAllReviews={getAllReviews}/>}
             <LoadMore nextPage={nextPage} prevPage={prevPage} reviews={reviews} page={page}/>
             {isLoading &&  <Loader />}
         </>

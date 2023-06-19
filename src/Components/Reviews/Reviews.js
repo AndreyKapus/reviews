@@ -7,7 +7,7 @@ import authSelectors from "../../Redux/Auth/Selectors";
 import { useSelector } from "react-redux";
 
 
-const AllReviews = ({reviews, onDeleteReview}) => {
+const AllReviews = ({reviews, onDeleteReview, getAllReviews, page}) => {
     const [inputValue, setInputValue] = useState('');
     const [total, setTotal] = useState('');
 
@@ -31,12 +31,12 @@ const AllReviews = ({reviews, onDeleteReview}) => {
 
     const filteredReviews = inputValue !== '' && total !== [] ? total.filter(review => 
         review.company.toLowerCase().includes(inputValue.toLowerCase())
-     ) : reviews;
+     ) : reviews;  
    
     return(
         <ReviewsWrapper>
             <AddWrapper>
-                <AddModal reviews={reviews} total={total}/>
+                <AddModal reviews={reviews} total={total} getAllReviews={getAllReviews} page={page}/>
                 <SeachForm type="text" onChange={searchReview} placeholder="search by company"/>
             </AddWrapper>
             <ReviewsList>
