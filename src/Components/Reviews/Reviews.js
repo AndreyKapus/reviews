@@ -9,25 +9,10 @@ import {VscChromeClose} from 'react-icons/vsc'
 
 const AllReviews = ({reviews, onDeleteReview, getAllReviews, page, total}) => {
     const [inputValue, setInputValue] = useState('');
-    // const [total, setTotal] = useState('');
-
-    // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn)
 
     const searchReview = (e) => {
         setInputValue(e.target.value);
     };
-
-    // useEffect(() => {
-    //     if(!isLoggedIn) {
-    //       return;
-    //     };
-        
-    //       const getAllReviewsLenght = async () => {
-    //         const responce = await API.getAllLenght();
-    //       setTotal(responce.data)
-    //       }
-    //         getAllReviewsLenght()
-    //   }, [isLoggedIn])
 
     const filteredReviews = inputValue !== '' && total !== [] ? total.filter(review => 
         review.company.toLowerCase().includes(inputValue.toLowerCase())

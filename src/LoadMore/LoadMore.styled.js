@@ -22,3 +22,16 @@ export const LoadMoreBtn = styled.button`
 export const LoadMorePage = styled.p`
     margin-right: 10px;
 `;
+
+export const PlugBtn = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: ${p => p.theme.colors.accent};
+    border: none;
+    border-radius: 50%;
+    margin-right: 10px;
+    visibility: hidden
+`;
