@@ -1,9 +1,16 @@
+import {HomePageTitle,
+    HomePageContainer,
+    GetStartedBtn,
+    Note
+} from './HomePage.styled'
 
 const HomePage = () => {
     return (
-        <div>
-            <h1>This is home page</h1>
-        </div>
+        <HomePageContainer>
+            <HomePageTitle>Track your job reviews, organize your dream job search in a convenient review manager.</HomePageTitle>
+            <GetStartedBtn type="button">Get started</GetStartedBtn>
+            <Note>(Development is ongoing, the application may be temporarily unavailable during the update process.)</Note>
+        </HomePageContainer>
     )
 };
 
