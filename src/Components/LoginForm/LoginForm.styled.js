@@ -35,7 +35,7 @@ export const LoginFormStyled = styled.form`
 
 export const LoginFormLabel = styled.label`
     color: ${p => p.theme.colors.primaryTextColor};
-    &:not(:first-child) {
+    &:not(:first-of-type) {
         margin-top: 12px;
     };
 `
