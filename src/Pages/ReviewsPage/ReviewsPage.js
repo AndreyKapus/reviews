@@ -11,6 +11,8 @@ const ReviewsPage = () => {
     const [reviews, setReviews] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [page, setPage] = useState(1);
+    const [total, setTotal] = useState('');
+    const [lastPage, setLastPage] = useState(false);
 
     const showDeleteSuccess = () => {
         toast.success('Review deleted', {
@@ -34,7 +36,6 @@ const ReviewsPage = () => {
             setIsLoading(false)
     };
     
-
     const nextPage = () => {
         setPage(prevPage => prevPage + 1)
     };
@@ -59,10 +60,30 @@ const ReviewsPage = () => {
        
     }, [isLoggedIn, page]);
 
+    useEffect(() => {
+        if(!isLoggedIn) {
+          return;
+        };
+        
+          const getAllReviewsLenght = async () => {
+            const responce = await API.getAllLenght();
+          setTotal(responce.data);
+          const isLastPage = Math.ceil(total.length / 9)
+          console.log(isLastPage)
+          if(isLastPage === page) {
+            setLastPage(true)
+        };
+            if(isLastPage !== page) {
+                setLastPage(false)
+            }
+          }
+            getAllReviewsLenght()
+      }, [isLoggedIn, page, total.length])
+
     return (
         <>  
-            {isLoggedIn && <AllReviews reviews={reviews} page={page} onDeleteReview={deleteReview} getAllReviews={getAllReviews}/>}
-            <LoadMore nextPage={nextPage} prevPage={prevPage} reviews={reviews} page={page}/>
+            {isLoggedIn && <AllReviews reviews={reviews} page={page} total={total} onDeleteReview={deleteReview} getAllReviews={getAllReviews}/>}
+            <LoadMore nextPage={nextPage} prevPage={prevPage} reviews={reviews} page={page} lastPage={lastPage}/>
             {isLoading &&  <Loader />}
             <ToastContainer />
         </>
