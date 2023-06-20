@@ -11,7 +11,7 @@ const HomePage = () => {
     return (
         <HomePageContainer>
             <HomePageTitle>Track your job reviews, organize your dream job search in a convenient review manager.</HomePageTitle>
-            <GetStartedBtn type="button">
+            <GetStartedBtn to='/register'>
                 <GetStartedBtnText>Get started</GetStartedBtnText>
                 <RocketIconWrapper><BsFillRocketTakeoffFill color='white'/></RocketIconWrapper>
             </GetStartedBtn>

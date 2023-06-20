@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const HomePageContainer = styled.div`
     margin-top: 30px;
@@ -33,15 +34,15 @@ export const HomePageTitle = styled.h1`
     };
 `;
 
-export const GetStartedBtn = styled.button`
+export const GetStartedBtn = styled(NavLink)`
     background-color: ${p => p.theme.colors.accent};
     color: ${p => p.theme.colors.primaryBg};
     font-size: ${p => p.theme.fontSizes.secondaryTextSize};
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
-
+    width: 140px;
+    height: 25px;
     padding: 12px;
     margin-top: 30px;
     margin-left: auto;
@@ -50,6 +51,7 @@ export const GetStartedBtn = styled.button`
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
 
     :hover {
         transform: scale(1.2);
