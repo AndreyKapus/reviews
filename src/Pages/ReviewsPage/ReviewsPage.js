@@ -69,7 +69,7 @@ const ReviewsPage = () => {
             const responce = await API.getAllLenght();
           setTotal(responce.data);
           const isLastPage = Math.ceil(total.length / 9)
-          console.log(isLastPage)
+          
           if(isLastPage === page) {
             setLastPage(true)
         };
@@ -83,7 +83,7 @@ const ReviewsPage = () => {
     return (
         <>  
             {isLoggedIn && <AllReviews reviews={reviews} page={page} total={total} onDeleteReview={deleteReview} getAllReviews={getAllReviews}/>}
-            <LoadMore nextPage={nextPage} prevPage={prevPage} reviews={reviews} page={page} lastPage={lastPage}/>
+            <LoadMore nextPage={nextPage} prevPage={prevPage} reviews={reviews} total={total} page={page} lastPage={lastPage}/>
             {isLoading &&  <Loader />}
             <ToastContainer />
         </>
