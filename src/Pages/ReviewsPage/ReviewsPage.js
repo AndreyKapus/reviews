@@ -78,7 +78,7 @@ const ReviewsPage = () => {
             }
           }
             getAllReviewsLenght()
-      }, [isLoggedIn, page, total.length])
+      }, [isLoggedIn, page, total])
 
     return (
         <>  
