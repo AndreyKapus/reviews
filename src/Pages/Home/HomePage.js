@@ -15,7 +15,7 @@ const HomePage = () => {
                 <GetStartedBtnText>Get started</GetStartedBtnText>
                 <RocketIconWrapper><BsFillRocketTakeoffFill color='white'/></RocketIconWrapper>
             </GetStartedBtn>
-            <Note>(Development is ongoing, the application may be temporarily unavailable during the update process.)</Note>
+            <Note>(Development is ongoing, the application may be temporarily unavailable, or some functions may not work during the update process.)</Note>
         </HomePageContainer>
     )
 };
