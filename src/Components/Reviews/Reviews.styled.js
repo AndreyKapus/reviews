@@ -35,10 +35,6 @@ export const ReviewsList = styled.ul`
   margin-left: auto;
   gap: 15px;
 
-  @media screen and (max-width: 767px) {
-    max-width: 320px;
-  }
-
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: flex-start;
@@ -48,18 +44,19 @@ export const ReviewsList = styled.ul`
 `;
 
 export const ReviewListItem = styled.li`
+  box-sizing: border-box;
   position: relative;
   border: 1px solid ${(p) => p.theme.colors.accent};
   border-radius: 5px;
   padding: 10px;
 
   @media screen and (min-width: 768px) {
-    width: 338px;
+    flex-basis: calc((100% - 15px) / 2);
     height: 200px;
   }
 
   @media screen and (min-width: 1280px) {
-    width: 380px;
+    flex-basis: calc((100% - 30px) / 3);
     height: 200px;
   }
 `;
