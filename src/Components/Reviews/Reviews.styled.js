@@ -52,11 +52,13 @@ export const ReviewListItem = styled.li`
 
   @media screen and (min-width: 768px) {
     flex-basis: calc((100% - 15px) / 2);
+    max-width: 380px;
     height: 200px;
   }
 
   @media screen and (min-width: 1280px) {
     flex-basis: calc((100% - 30px) / 3);
+    max-width: 401px;
     height: 200px;
   }
 `;
