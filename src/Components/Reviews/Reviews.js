@@ -7,6 +7,7 @@ import {
   Vacancy,
   ReviewsWrapper,
   VacancyValue,
+  VacancyLink,
   DeleteBtn,
   SeachForm,
 } from "./Reviews.styled";
@@ -59,7 +60,7 @@ const AllReviews = ({
                   Company: <VacancyValue>{company}</VacancyValue>
                 </Vacancy>
                 <Vacancy>
-                  Link: <VacancyValue>{link}</VacancyValue>
+                  Link: <VacancyLink>{link}</VacancyLink>
                 </Vacancy>
                 <Vacancy>
                   Date: <VacancyValue>{date}</VacancyValue>
