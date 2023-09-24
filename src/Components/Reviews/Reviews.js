@@ -60,7 +60,7 @@ const AllReviews = ({
                   Company: <VacancyValue>{company}</VacancyValue>
                 </Vacancy>
                 <Vacancy>
-                  Link: <VacancyLink>{link}</VacancyLink>
+                  Link: <VacancyLink to={link}>company page</VacancyLink>
                 </Vacancy>
                 <Vacancy>
                   Date: <VacancyValue>{date}</VacancyValue>
