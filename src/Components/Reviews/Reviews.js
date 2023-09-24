@@ -42,11 +42,7 @@ const AllReviews = ({
           getAllReviews={getAllReviews}
           page={page}
         />
-        <SeachForm
-          type="text"
-          onChange={searchReview}
-          placeholder="search by company"
-        />
+        <SeachForm type="text" onChange={searchReview} placeholder="search" />
       </AddWrapper>
       <ReviewsList>
         {reviews ? (
