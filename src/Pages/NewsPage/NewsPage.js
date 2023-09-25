@@ -4,6 +4,8 @@ import {
   NewsListItem,
   NewsSection,
   NewsPageImg,
+  CardTitle,
+  CardText,
 } from "./NewsPage.styled";
 import mainPageImg from "../../images/main.jpg";
 import vacancyImg from "../../images/vacancies.jpg";
@@ -15,31 +17,39 @@ const NewsPage = () => {
     <NewsSection>
       <NewsList>
         <NewsListItem>
-          <NewsCardLink>
-            <NewsPageImg src={mainPageImg} alt="main page"></NewsPageImg>
-            <h3>Main</h3>
-            <p></p>
+          <NewsCardLink href="https://dou.ua" target="blanc">
+            <div>
+              <NewsPageImg src={mainPageImg} alt="main page"></NewsPageImg>
+              <CardTitle>Main</CardTitle>
+              <CardText>The main community of programmers...</CardText>
+            </div>
           </NewsCardLink>
         </NewsListItem>
         <NewsListItem>
-          <NewsCardLink>
-            <NewsPageImg src={vacancyImg} alt="vacancy"></NewsPageImg>
-            <h3>Vacancy</h3>
-            <p></p>
+          <NewsCardLink href="https://jobs.dou.ua" target="blanc">
+            <div>
+              <NewsPageImg src={vacancyImg} alt="vacancy"></NewsPageImg>
+              <CardTitle>Vacancy</CardTitle>
+              <CardText>Find a job, vacancies of leading companies...</CardText>
+            </div>
           </NewsCardLink>
         </NewsListItem>
         <NewsListItem>
-          <NewsCardLink>
-            <NewsPageImg src={topImg} alt="Top 50 companies"></NewsPageImg>
-            <h3>Top-50</h3>
-            <p></p>
+          <NewsCardLink href="https://jobs.dou.ua/top50/" target="blanc">
+            <div>
+              <NewsPageImg src={topImg} alt="Top 50 companies"></NewsPageImg>
+              <CardTitle>Top-50</CardTitle>
+              <CardText>TOP-50 largest IT companies of Ukraine...</CardText>
+            </div>
           </NewsCardLink>
         </NewsListItem>
         <NewsListItem>
-          <NewsCardLink>
-            <NewsPageImg src={newsImg} alt="Trends"></NewsPageImg>
-            <h3>Trends</h3>
-            <p></p>
+          <NewsCardLink href="https://dou.ua/lenta/" target="blanc">
+            <div>
+              <NewsPageImg src={newsImg} alt="Trends"></NewsPageImg>
+              <CardTitle>News</CardTitle>
+              <CardText>News, analytics, articles, interviews...</CardText>
+            </div>
           </NewsCardLink>
         </NewsListItem>
       </NewsList>
