@@ -12,7 +12,7 @@ const MobileMenu = () => {
 
   return (
     <>
-      <MenuBtn handleOpenMenu={handleOpenMenu} />
+      <MenuBtn handleOpenMenu={handleOpenMenu} isOpen={isOpen} />
       {isOpen && (
         <Menu>
           <Navigation />
