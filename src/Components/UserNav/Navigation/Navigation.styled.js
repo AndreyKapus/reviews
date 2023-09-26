@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export const UserNav = styled.nav`
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 60px 20px;
 
   @media screen and (min-width: 768px) {
     padding: 0px;
@@ -26,6 +26,7 @@ export const NavListWrapper = styled.div`
 
 export const HomePageLink = styled(NavLink)`
   cursor: pointer;
+  margin-bottom: 12px;
   margin-right: 12px;
   :hover {
     transform: scale(1.1);
@@ -36,6 +37,7 @@ export const HomePageLink = styled(NavLink)`
 
   @media screen and (min-width: 768px) {
     margin-right: 20px;
+    margin-bottom: 0px;
   }
 `;
 

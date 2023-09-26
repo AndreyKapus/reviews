@@ -15,7 +15,7 @@ const MobileMenu = () => {
       <MenuBtn handleOpenMenu={handleOpenMenu} isOpen={isOpen} />
       {isOpen && (
         <Menu>
-          <Navigation />
+          <Navigation setIsOpen={setIsOpen} />
         </Menu>
       )}
     </>
