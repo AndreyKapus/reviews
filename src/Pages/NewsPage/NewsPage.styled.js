@@ -29,7 +29,8 @@ export const NewsListItem = styled.li`
   padding: 20px;
   border: 1px solid black;
   border-radius: 8px;
-
+  border-color: ${(p) => p.theme.colors.accent};
+  transition: scale 200ms linear, box-shadow 200ms linear;
   @media screen and (min-width: 768px) {
     flex-basis: calc((100% - 15px) / 2);
     height: 320px;
@@ -37,6 +38,11 @@ export const NewsListItem = styled.li`
 
   @media screen and (min-width: 1280px) {
     flex-basis: calc((100% - 45px) / 3);
+  }
+
+  &:hover {
+    scale: 1.02;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
   }
 `;
 
