@@ -9,7 +9,6 @@ import {
 } from "./Navigation.styled";
 import logo from "../../../icons/icons8-briefcase.svg";
 import { logoStyles } from "../../../Styles/Theme";
-// import MobileMenu from "../../MobileMenu/MobileMenu";
 
 const Navigation = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
@@ -19,7 +18,7 @@ const Navigation = () => {
       <HomePageLink to="/">
         <img src={logo} alt="logo" style={logoStyles} />
       </HomePageLink>
-      {/* <MobileMenu /> */}
+
       <NavListWrapper>
         {isLoggedIn && (
           <ReviewsPageLink to="/contacts">My reviews</ReviewsPageLink>

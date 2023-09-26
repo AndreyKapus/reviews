@@ -1,9 +1,11 @@
-import { MobileMenuBtn } from "./MenuBtn.styled";
+import { MobileMenuBtn, MenuBtnIcon } from "./MenuBtn.styled";
 
-const MenuBtn = () => {
+const MenuBtn = ({ handleOpenMenu }) => {
   return (
     <>
-      <MobileMenuBtn type="button"></MobileMenuBtn>
+      <MobileMenuBtn type="button" onClick={handleOpenMenu}>
+        <MenuBtnIcon />
+      </MobileMenuBtn>
     </>
   );
 };

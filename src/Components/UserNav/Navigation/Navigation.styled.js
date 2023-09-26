@@ -3,8 +3,15 @@ import { NavLink } from "react-router-dom";
 
 export const UserNav = styled.nav`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const NavListWrapper = styled.div`

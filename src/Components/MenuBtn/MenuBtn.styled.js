@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { BsFillCaretDownFill } from "react-icons/bs";
 
 export const MobileMenuBtn = styled.button`
   position: absolute;
@@ -12,4 +13,9 @@ export const MobileMenuBtn = styled.button`
   border-bottom: 1px solid ${(p) => p.theme.colors.secondaryTextColor};
   border-right: 1px solid ${(p) => p.theme.colors.secondaryTextColor};
   border-radius: 2px;
+  z-index: 2;
+`;
+
+export const MenuBtnIcon = styled(BsFillCaretDownFill)`
+  color: ${(p) => p.theme.colors.primaryBg};
 `;
